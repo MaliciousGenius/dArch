@@ -2,8 +2,8 @@
 # Copyright (c) 2016 Malicious Genius
 #
 
-pacman -S --needed base-devel
-pacman -S --needed docker
+pacman --noconfirm -S base-devel
+pacman --noconfirm -S docker
 
 systemctl start docker
 systemctl enable docker
