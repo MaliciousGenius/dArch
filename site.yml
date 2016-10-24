@@ -1,0 +1,52 @@
+---
+
+- hosts: all
+  vars:
+    # Arch's default python is python3
+    ansible_python_interpreter: "/usr/bin/env python2"
+
+  handlers:
+
+    - name: mkinitcpio
+      command: mkinitcpio -p linux
+      notify: mkinitcpio-mainline
+
+  roles:
+
+    - common
+    - network
+
+  tasks:
+
+    - name: Install packages
+      pacman: name={{ item }}
+      with_items:
+
+        # For the system
+        - openssh
+        - linux-firmware
+
+        # For the shell needs
+        - mc
+        - extra/bash-completion
+
+        # A DE is nice ...
+        #- gnome
+        #- gnome-extra
+        #- gnome-shell
+        #- gnome-software
+
+        # X
+        #- extra/xorg-xinit
+        #- extra/xf86-video-intel use: xf86-video-intel-git from aur
+        #- core/kmod
+        #- xf86-input-synaptics
+        #- firefox
+        #- terminator
+        #- networkmanager
+
+    - name: Start services (now, and on boot)
+      service: state=started name={{ item }} enabled=yes
+      with_items:
+        - sshd
+        - dhcpcd

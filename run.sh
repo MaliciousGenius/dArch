@@ -7,4 +7,4 @@ sudo pacman --noconfirm -S ansible
 cd /opt
 git clone https://github.com/MaliciousGenius/microarch-custom.git
 cd microarch-custom
-ansible-playbook --connection=local --ask-sudo-pass ./site.yml
+ansible-playbook --connection=local ./site.yml
