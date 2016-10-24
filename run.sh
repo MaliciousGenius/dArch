@@ -2,9 +2,8 @@
 # Copyright (c) 2016 Malicious Genius
 #
 
-sudo pacman --noconfirm -S ansible
+cat "mothership ansible_connection=local" > /etc/ansible/hosts
 
-cd /opt
-git clone https://github.com/MaliciousGenius/microarch-custom.git
-cd microarch-custom
-ansible-playbook --connection=local ./site.yml
+cd /opt/microarch-custom
+git pull
+ansible-playbook ./site.yml
