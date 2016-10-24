@@ -3,6 +3,10 @@
 #
 
 pacman -S --needed base-devel
+pacman -S --needed docker
+
+systemctl start docker
+systemctl enable docker
 
 git clone https://aur.archlinux.org/package-query.git
 cd package-query
