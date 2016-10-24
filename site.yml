@@ -31,19 +31,19 @@
         - extra/bash-completion
 
         # A DE is nice ...
-        #- gnome
-        #- gnome-extra
-        #- gnome-shell
-        #- gnome-software
+        - gnome
+        - gnome-extra
+        - gnome-shell
+        - gnome-software
 
         # X
-        #- extra/xorg-xinit
-        #- extra/xf86-video-intel use: xf86-video-intel-git from aur
-        #- core/kmod
-        #- xf86-input-synaptics
-        #- firefox
-        #- terminator
-        #- networkmanager
+        - extra/xorg-xinit
+        - extra/xf86-video-intel use: xf86-video-intel-git from aur
+        - core/kmod
+        - xf86-input-synaptics
+        - firefox
+        - terminator
+        - networkmanager
 
     - name: Start services (now, and on boot)
       service: state=started name={{ item }} enabled=yes
