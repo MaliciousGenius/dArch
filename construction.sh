@@ -2,11 +2,10 @@
 # Copyright (c) 2016 Malicious Genius
 #
 
-pacman --noconfirm -S base-devel git
-pacman --noconfirm -S docker
+sudo pacman --noconfirm -S base-devel git
 
-systemctl start docker
-systemctl enable docker
+#systemctl start docker
+#systemctl enable docker
 
 git clone https://aur.archlinux.org/package-query.git
 cd package-query
