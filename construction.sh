@@ -2,7 +2,7 @@
 # Copyright (c) 2016 Malicious Genius
 #
 
-pacman --noconfirm -S base-devel
+pacman --noconfirm -S base-devel git
 pacman --noconfirm -S docker
 
 systemctl start docker
