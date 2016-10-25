@@ -1,0 +1,30 @@
+---
+
+# Установаю графический интерфейс пользователя
+- name: Install packages
+  pacman: name={{ item }}
+  with_items:
+
+    # 1
+    - xorg-server
+    - xorg-xinit
+    - xorg-server-utils
+    - mesa
+    - xterm
+
+    #2
+    - xf86-video-vesa
+
+    #3
+    - xfce4
+    - xfce4-goodies
+    - sddm
+
+    #4
+    - ttf-liberation
+    - ttf-dejavu
+    - opendesktop-fonts
+    - ttf-bitstream-vera
+    - ttf-arphic-ukai
+    - ttf-arphic-uming
+    - ttf-hanazono
