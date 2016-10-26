@@ -34,4 +34,4 @@
 
   roles:
     - common
-    - gui
+#    - gui
