@@ -23,7 +23,7 @@
   copy:
     src: pacman.conf
     dest: /etc/pacman.conf
-    become: yes
+    force: yes
 
 - name: command1
   command: pacman -S --needed base-devel git wget yajl
