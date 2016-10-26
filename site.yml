@@ -12,17 +12,15 @@
       notify: mkinitcpio-mainline
 
   roles:
-
     - common
     - gui
 
   tasks:
 
     - name: Install packages
-      pacman: name={{ item }}
+      pacman:
+      name: {{ item }}
       with_items:
-
-        # For the system
         - openssh
         - linux-firmware
 
@@ -32,5 +30,5 @@
         - sshd
         - dhcpcd
 
-    - name: reboot
-      shell: reboot
+    - pause: minutes=5
+    - command: reboot
