@@ -14,3 +14,9 @@
   pacman:
     name: weston
     state: present
+
+- name: Install yaourt
+  pacman:
+    name: yaourt
+    state: present
+

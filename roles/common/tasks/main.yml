@@ -18,3 +18,15 @@
     name: dhcpcd
     state: started
     enabled: yes
+
+- name: configure pacman
+  copy:
+    src: pacman.conf
+    dest: /etc/pacman.conf
+    become: yes
+
+- name: command1
+  command: pacman -S --needed base-devel git wget yajl
+
+- name: command2
+  command: yaourt -S hawaii-meta-git --noconfirm
