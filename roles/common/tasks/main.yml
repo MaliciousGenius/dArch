@@ -25,8 +25,5 @@
     dest: /etc/pacman.conf
     force: yes
 
-- name: command1
-  command: pacman -S --needed base-devel git wget yajl
-
 - name: command2
-  command: yaourt -S hawaii-meta-git --noconfirm
+  command: "yaourt -S hawaii-meta-git --noconfirm"

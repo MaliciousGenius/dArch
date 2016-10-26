@@ -16,8 +16,13 @@
         name: "{{ item }}"
         state: present
       with_items:
+        - base-devel
+        - git
+        - wget
+        - yajl
         - openssh
         - linux-firmware
+
     - name: Start services (now, and on boot)
       service: state=started name={{ item }} enabled=yes
       with_items:
