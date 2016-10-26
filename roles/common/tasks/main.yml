@@ -24,6 +24,3 @@
     src: pacman.conf
     dest: /etc/pacman.conf
     force: yes
-
-- name: command2
-  command: "yaourt -S hawaii-meta-git --noconfirm"

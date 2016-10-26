@@ -28,6 +28,9 @@
       with_items:
         - sshd
 
+    - name: command2
+      command: "yaourt -S hawaii-meta-git --noconfirm"
+
   roles:
     - common
     - gui
