@@ -20,7 +20,6 @@
         - yaourt
         - git
         - wget
-        - yajl
         - openssh
         - linux-firmware
 
@@ -34,4 +33,4 @@
 
   roles:
     - common
-#    - gui
+    - gui

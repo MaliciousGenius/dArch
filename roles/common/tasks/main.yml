@@ -24,3 +24,7 @@
     src: pacman.conf
     dest: /etc/pacman.conf
     force: yes
+
+- name: Update package lists
+  pacman:
+    update_cache: yes
