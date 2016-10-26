@@ -1,22 +1,18 @@
 ---
 
-# Установаю имя хоста
 - name: Set hostname
   hostname:
     name: mothership
 
-# Задаю часовой пояс
 - name: Set timezone
   file:
     src: /usr/share/zoneinfo/Europe/Moscow
     dest: /etc/localtime
     state: link
 
-# Создаём новый ramdisk
 - name: Rebuild kernel
   command: mkinitcpio -p linux
 
-# Влючить загрузку dhcpcd
 - name: Start services dhcpcd
   service:
     name: dhcpcd

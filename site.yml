@@ -6,17 +6,11 @@
     ansible_python_interpreter: "/usr/bin/env python2"
 
   handlers:
-
     - name: mkinitcpio
       command: mkinitcpio -p linux
       notify: mkinitcpio-mainline
 
-  roles:
-    - common
-    - gui
-
   tasks:
-
     - name: Install packages
       pacman:
         name: "{{ item }}"
@@ -24,11 +18,11 @@
       with_items:
         - openssh
         - linux-firmware
-
     - name: Start services (now, and on boot)
       service: state=started name={{ item }} enabled=yes
       with_items:
         - sshd
 
-    - pause: minutes=5
-    - command: reboot
+  roles:
+    - common
+    - gui
