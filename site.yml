@@ -19,7 +19,7 @@
 
     - name: Install packages
       pacman:
-        name: {{ item }}
+        name: "{{ item }}"
         state: present
       with_items:
         - openssh
@@ -29,7 +29,6 @@
       service: state=started name={{ item }} enabled=yes
       with_items:
         - sshd
-        - dhcpcd
 
     - pause: minutes=5
     - command: reboot

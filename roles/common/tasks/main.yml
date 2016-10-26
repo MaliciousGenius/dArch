@@ -11,3 +11,14 @@
     src: /usr/share/zoneinfo/Europe/Moscow
     dest: /etc/localtime
     state: link
+
+# Создаём новый ramdisk
+- name: Rebuild kernel
+  command: mkinitcpio -p linux
+
+# Влючить загрузку dhcpcd
+- name: Start services dhcpcd
+  service:
+    name: dhcpcd
+    state: started
+    enabled: yes
