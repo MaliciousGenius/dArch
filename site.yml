@@ -11,26 +11,15 @@
       notify: mkinitcpio-mainline
 
   tasks:
-    - name: Install packages
-      pacman:
-        name: "{{ item }}"
-        state: present
-      with_items:
-        - base-devel
-        - yaourt
-        - git
-        - wget
-        - openssh
-        - linux-firmware
-
     - name: Start services (now, and on boot)
       service: state=started name={{ item }} enabled=yes
       with_items:
         - sshd
 
-    - name: command2
-      command: "yaourt -S hawaii-meta --noconfirm"
+    - name: command
+      command: "date"
 
   roles:
+    - base
     - common
     - gui
