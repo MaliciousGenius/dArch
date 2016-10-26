@@ -29,7 +29,7 @@
         - sshd
 
     - name: command2
-      command: "yaourt -S hawaii-meta-git --noconfirm"
+      command: "yaourt -S hawaii-meta --noconfirm"
 
   roles:
     - common
