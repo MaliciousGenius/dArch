@@ -1,5 +1,3 @@
---
-
 - name: Copy pacman configuration file
   copy:
     src: pacman.conf
