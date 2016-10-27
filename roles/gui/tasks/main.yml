@@ -12,10 +12,9 @@
     - "SigLevel = Optional TrustAll"
 
 - name: Install OT5
-  pacman:
-    name: "qt5-base"
-    state: "present"
-    update_cache: yes
+  command: yaourt -S qt51-base  --noconfirm
+
+#qtchooser
 
 - name: Install packages
   pacman:
