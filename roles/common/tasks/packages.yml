@@ -16,7 +16,9 @@
     update_cache: yes
 
 - name: Temp build dir
-  command: "rm -rf /tmp/yaourt-tmp-admin && mkdir /home/admin/yaourt && ln -s /home/admin/yaourt /tmp/yaourt-tmp-admin"
+  command: "mount -o remount,size=4G /tmp/"
+
+#  command: "rm -rf /tmp/yaourt-tmp-admin && mkdir /home/admin/yaourt && ln -s /home/admin/yaourt /tmp/yaourt-tmp-admin"
 
 - name: Install packages
   pacman:
