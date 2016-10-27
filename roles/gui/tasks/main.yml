@@ -11,8 +11,8 @@
     - "Server = http://archive.maui-project.org/archlinux/$repo/os/$arch"
     - "SigLevel = Optional TrustAll"
 
-
 - name: Install packages
   pacman:
-    name: hawaii-meta-git
-    state: present
+    name: "hawaii-meta-git"
+    state: "present"
+    update_cache: yes

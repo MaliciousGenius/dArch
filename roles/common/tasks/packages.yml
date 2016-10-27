@@ -13,6 +13,7 @@
   pacman:
     name: "yaourt"
     state: "present"
+    update_cache: yes
 
 - name: Refresh pacman mirrors
   pacman:
