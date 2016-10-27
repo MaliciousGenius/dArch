@@ -2,24 +2,5 @@
 
 - name: Install packages
   pacman:
-    name: "{{ item }}"
+    name: hawaii-meta-git
     state: present
-  with_items:
-    - mesa-full-wayland
-    - wayland
-    - libxkbcommon
-    - qt5-qtbase-git
-    - qt5-qtwayland-git
-    - qt5-qtsvg-git
-    - qt5-qtimageformats-git
-    - qt5-qtmultimedia-git
-    - qt5-qttools-git
-    - qt5-qt3d-git
-    - qt5-qtgraphicaleffects-git
-    #
-    - qtcreator-for-qt5-git
-    #
-    - hawaii-greenisland-git
-    - hawaii-terminal-git
-
-
