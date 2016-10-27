@@ -13,11 +13,10 @@
 
 
 - name: Install qtchooser
-  command: yaourt -Syu qtchooser
+  command: yaourt -S qtchooser --noconfirm
 
 - name: Install OT5
-  command: yaourt -Syu qt51-base
-#  command: yaourt -S qt51-base --noconfirm
+  command: yaourt -S qt51-base --noconfirm
 
 - name: Install packages
   pacman:
