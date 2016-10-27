@@ -17,14 +17,13 @@
 
 - name: Config /etc/yaourtrc
   lineinfile:
-    dest: "/etc/locale.gen"
-    state: "present"
+    dest: "/etc/yaourtrc"
     line: "{{ item.line }}"
     regexp: "{{ item.regexp }}"
+    state: "present"
   with_items:
     - { line: 'TMPDIR="$HOME"', regexp: '^#TMPDIR="/tmp"' }
-    - { line: "NOCONFIRM=1", regexp: '^#NOCONFIRM=0' }
-
+    - { line: 'NOCONFIRM=1', regexp: '^#NOCONFIRM=0' }
 
 - name: Install packages
   pacman:
