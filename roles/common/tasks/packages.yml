@@ -15,10 +15,16 @@
     state: "present"
     update_cache: yes
 
-- name: Temp build dir
-  command: "mount -o remount,size=6G /tmp/"
+- name: Config /etc/yaourtrc
+  lineinfile:
+    dest: "/etc/locale.gen"
+    state: "present"
+    line: "{{ item.line }}"
+    regexp: "{{ item.regexp }}"
+  with_items:
+    - { line: 'TMPDIR="$HOME"', regexp: '^#TMPDIR="/tmp"' }
+    - { line: "NOCONFIRM=1", regexp: '^#NOCONFIRM=0' }
 
-#  command: "rm -rf /tmp/yaourt-tmp-admin && mkdir /home/admin/yaourt && ln -s /home/admin/yaourt /tmp/yaourt-tmp-admin"
 
 - name: Install packages
   pacman:

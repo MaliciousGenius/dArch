@@ -6,27 +6,31 @@
 
 - name: Set timezone
   file:
-    src: /usr/share/zoneinfo/Europe/Moscow
-    dest: /etc/localtime
-    state: link
+    src: "/usr/share/zoneinfo/Europe/Moscow"
+    dest: "/etc/localtime"
+    state: "link"
 
-- name: Copy in locale.gen config
-  copy:
-    src: locale.gen
-    dest: /etc/locale.gen
-    force: yes
+- name: Config /etc/locale.gen
+  lineinfile:
+    dest: "/etc/locale.gen"
+    state: "present"
+    line: "{{ item.line }}"
+    regexp: "{{ item.regexp }}"
+  with_items:
+    - { line: "en_US.UTF-8 UTF-8", regexp: "^#en_US.UTF-8 UTF-8" }
+    - { line: "ru_RU.UTF-8 UTF-8", regexp: "^#ru_RU.UTF-8 UTF-8" }
 
 - name: Generate locale
-  command: locale-gen
+  command: "locale-gen"
 
-- name: Copy in locale config
-  copy:
-    src: locale.conf
-    dest: /etc/locale.conf
-    force: yes
+- name: Config /etc/locale.conf
+  lineinfile:
+    dest: "/etc/locale.conf"
+    state: "present"
+    line: 'LANG="ru_RU.UTF-8"'
 
 - name: Rebuild kernel
-  command: mkinitcpio -p linux
+  command: "mkinitcpio -p linux"
 
 - name: Start services dhcpcd
   service:
