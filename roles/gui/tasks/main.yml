@@ -12,11 +12,11 @@
     - "SigLevel = Optional TrustAll"
 
 
-- name: Install qtchooser
-  command: yaourt -S qtchooser --noconfirm
+#- name: Install qtchooser
+#  command: yaourt -S qtchooser --noconfirm
 
-- name: Install OT5
-  command: yaourt -S qt51-base --noconfirm
+#- name: Install OT5
+#  command: yaourt -S qt51-base --noconfirm
 
 - name: Install packages
   pacman:
