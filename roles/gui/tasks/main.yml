@@ -11,6 +11,12 @@
     - "Server = http://archive.maui-project.org/archlinux/$repo/os/$arch"
     - "SigLevel = Optional TrustAll"
 
+- name: Install OT5
+  pacman:
+    name: "qt5-base"
+    state: "present"
+    update_cache: yes
+
 - name: Install packages
   pacman:
     name: "hawaii-meta-git"
