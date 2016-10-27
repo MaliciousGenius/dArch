@@ -1,5 +1,10 @@
 ---
 
+- name: Install vesa video driver
+  pacman:
+    name: xf86-video-vesa
+    state: present
+
 - name: Install packages
   pacman:
     name: hawaii-meta-git
