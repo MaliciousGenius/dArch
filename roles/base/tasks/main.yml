@@ -13,12 +13,12 @@
 - name: Config /etc/locale.gen
   lineinfile:
     dest: "/etc/locale.gen"
-    state: "present"
     line: "{{ item.line }}"
     regexp: "{{ item.regexp }}"
+    state: "present"
   with_items:
-    - { line: "en_US.UTF-8 UTF-8", regexp: "^#en_US.UTF-8 UTF-8" }
-    - { line: "ru_RU.UTF-8 UTF-8", regexp: "^#ru_RU.UTF-8 UTF-8" }
+    - { line: 'en_US.UTF-8 UTF-8', regexp: '^#en_US.UTF-8 UTF-8' }
+    - { line: 'ru_RU.UTF-8 UTF-8', regexp: '^#ru_RU.UTF-8 UTF-8' }
 
 - name: Generate locale
   command: "locale-gen"
@@ -26,8 +26,8 @@
 - name: Config /etc/locale.conf
   lineinfile:
     dest: "/etc/locale.conf"
-    state: "present"
     line: 'LANG="ru_RU.UTF-8"'
+    state: "present"
 
 - name: Rebuild kernel
   command: "mkinitcpio -p linux"
