@@ -1,0 +1,6 @@
+### ABS
+- name: Install packages
+  pacman:
+    name: "abs"
+    state: "present"
+    update_cache: yes

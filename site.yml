@@ -3,23 +3,19 @@
 - hosts: mothership
   vars:
     # Arch's default python is python3
-    ansible_python_interpreter: "/usr/bin/env python2"
+    #ansible_python_interpreter: "/usr/bin/env python2"
 
   handlers:
-    - name: mkinitcpio
-      command: mkinitcpio -p linux
-      notify: mkinitcpio-mainline
+    #- name: mkinitcpio
+    #  command: mkinitcpio -p linux
+    #  notify: mkinitcpio-mainline
 
   tasks:
-    - name: Start services (now, and on boot)
-      service: state=started name={{ item }} enabled=yes
-      with_items:
-        - sshd
-
     - name: command
       command: "date"
 
   roles:
     - base
     - common
+    - devtools
     - gui

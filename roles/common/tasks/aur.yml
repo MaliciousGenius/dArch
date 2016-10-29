@@ -24,13 +24,3 @@
   with_items:
     - { line: 'TMPDIR="$HOME"', regexp: '^#TMPDIR="/tmp"' }
     - { line: 'NOCONFIRM=1', regexp: '^#NOCONFIRM=0' }
-
-- name: Install packages
-  pacman:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - yaourt
-    - git
-    - wget
-    - openssh
