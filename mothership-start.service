@@ -1,0 +1,10 @@
+[Unit]
+Description=Update config
+
+[Service]
+Type=oneshot
+User=root
+ExecStart=/opt/microarch-custom/apply
+
+[Install]
+WantedBy=multi-user.target
