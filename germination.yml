@@ -1,0 +1,48 @@
+---
+
+- hosts: mothership
+  vars:
+    # Arch's default python is python3
+    ansible_python_interpreter: "/usr/bin/env python2"
+
+  tasks:
+    - name: command
+      command: "date"
+
+    - name: Set hostname
+      hostname:
+      name: mothership
+
+    - name: Set timezone
+      file:
+        src: "/usr/share/zoneinfo/Europe/Moscow"
+        dest: "/etc/localtime"
+        state: "link"
+
+    - name: Config /etc/locale.gen
+      lineinfile:
+        dest: "/etc/locale.gen"
+        line: "{{ item.line }}"
+        regexp: "{{ item.regexp }}"
+        state: "present"
+      with_items:
+        - { line: 'en_US.UTF-8 UTF-8', regexp: '^#en_US.UTF-8 UTF-8' }
+        - { line: 'ru_RU.UTF-8 UTF-8', regexp: '^#ru_RU.UTF-8 UTF-8' }
+
+    - name: Generate locale
+      command: "locale-gen"
+
+    - name: Config /etc/locale.conf
+      lineinfile:
+        dest: "/etc/locale.conf"
+        line: 'LANG="ru_RU.UTF-8"'
+        state: "present"
+
+    - name: Rebuild kernel
+      command: "mkinitcpio -p linux"
+
+    - name: Start services dhcpcd
+      service:
+        name: dhcpcd
+        state: started
+        enabled: yes

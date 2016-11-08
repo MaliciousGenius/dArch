@@ -1,0 +1,17 @@
+#!/bin/bash
+# Copyright (c) 2016 Malicious Genius
+#
+
+useradd -m -d /home/system -g sys -G wheel -s /bin/bash system
+echo 'Enter "system" user password'
+passwd system
+
+cd /opt/microarch-custom
+git pull
+echo 'mothership ansible_connection=local' > /etc/ansible/hosts
+ansible-playbook ./germination.yml
+
+echo 'ansible-playbook /opt/microarch-custom/mothership.yml > /home/system/command.sh'
+
+sleep 5m
+reboot
