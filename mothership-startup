@@ -3,7 +3,7 @@ Description=Update config
 
 [Service]
 Type=oneshot
-ExecStart=/opt/microarch-custom/apply
+ExecStart=/opt/microarch-custom/apply.sh
 
 [Install]
 WantedBy=network.target
