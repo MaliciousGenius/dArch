@@ -1,6 +1,6 @@
 ---
 
-- hosts: mothership
+- hosts: all
   vars:
     # Arch's default python is python3
     ansible_python_interpreter: "/usr/bin/env python2"
@@ -11,7 +11,7 @@
 
     - name: Set hostname
       hostname:
-      name: mothership
+        name: mothership
 
     - name: Set timezone
       file:
