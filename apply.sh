@@ -11,6 +11,7 @@ if [ ! -f /etc/mothership ]; then
     ansible-playbook ./germination.yml
     ln -s '/opt/microarch-custom/mothership-startup' '/etc/systemd/system/multi-user.target.wants/mothership-startup'
     touch /etc/mothership
+
     sleep 3m
     systemctl reboot
 fi
