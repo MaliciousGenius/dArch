@@ -16,5 +16,3 @@
 
   roles:
     - common
-    - devtools
-    - gui

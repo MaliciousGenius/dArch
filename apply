@@ -11,7 +11,7 @@ if [ ! -f /etc/mothership ]; then
     ansible-playbook ./germination.yml
     cp ./mothership-start.service /ets/systemd/system/mothership-start.service
     touch /etc/mothership
-    sleep 5m
+    sleep 3m
     systemctl reboot
 fi
 

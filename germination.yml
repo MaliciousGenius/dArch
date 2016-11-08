@@ -38,6 +38,18 @@
         line: 'LANG="ru_RU.UTF-8"'
         state: "present"
 
+    - name: Install packages
+      pacman:
+        name: "{{ item }}"
+        state: "present"
+        update_cache: yes
+      with_items:
+        - base
+        - base-devel
+        - grub
+        - git
+        - ansible
+
     - name: Rebuild kernel
       command: "mkinitcpio -p linux"
 
