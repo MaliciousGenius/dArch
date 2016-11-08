@@ -9,7 +9,7 @@ if [ ! -f /etc/mothership ]; then
     cd /opt/microarch-custom & git pull
     echo 'mothership ansible_connection=local' > /etc/ansible/hosts
     ansible-playbook ./germination.yml
-    ln -s '/opt/microarch-custom/mothership-startup' '/etc/systemd/system/multi-user.target.wants/mothership-startup'
+    ln -s '/opt/microarch-custom/mothership-startup.service.service' '/etc/systemd/system/multi-user.target.wants/mothership-startup.service.service'
     touch /etc/mothership
 
     sleep 3m
