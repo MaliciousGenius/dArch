@@ -3,7 +3,7 @@ Description=Update config
 
 [Service]
 Type=oneshot
-User=root
+User=system
 ExecStart=/opt/microarch-custom/apply
 
 [Install]
