@@ -3,7 +3,8 @@ Description=Update config
 
 [Service]
 Type=oneshot
+User=root
 ExecStart=/opt/microarch-custom/apply.sh
 
 [Install]
-WantedBy=network.target
+WantedBy=multi-user.target
