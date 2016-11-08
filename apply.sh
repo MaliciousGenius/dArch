@@ -9,7 +9,7 @@ if [ ! -f /etc/mothership ]; then
     cd /opt/microarch-custom & git pull
     echo 'mothership ansible_connection=local' > /etc/ansible/hosts
     ansible-playbook ./germination.yml
-    ln -s '/opt/microarch-custom/mothership-startup.service.service' '/etc/systemd/system/mothership-startup.service'
+    ln -s '/opt/microarch-custom/mothership-startup.service' '/etc/systemd/system/mothership-startup.service'
     systemctl daemon-reload
     touch /etc/mothership
 
