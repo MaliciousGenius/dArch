@@ -11,9 +11,9 @@ if [ ! -f /etc/mothership ]; then
     ansible-playbook ./germination.yml
     ln -s '/opt/microarch-custom/mothership-startup.service' '/etc/systemd/system/mothership-startup.service'
     systemctl daemon-reload
-    systemctl enable mothership-startup.service
+#    systemctl enable mothership-startup.service
     touch /etc/mothership
-    sleep 3m
+    sleep 1m
     systemctl reboot
 fi
 

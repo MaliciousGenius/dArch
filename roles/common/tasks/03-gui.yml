@@ -1,6 +1,6 @@
-### ABS
+### Maui project (Hawaii)
 - name: Install packages
   pacman:
-    name: "abs"
+    name: "lxqt"
     state: "present"
     update_cache: yes
