@@ -14,7 +14,7 @@
     - lxqt-qtplugin
     - lxqt-session
     - lxqt-about
-#    - lxqt-admin
+    - lxqt-admin
     - lxqt-globalkeys
     - lxqt-notificationd
     - lxqt-openssh-askpass
