@@ -25,9 +25,9 @@
     - breeze-icons
     - sddm
 
-- name: copy new conf1
-  copy: src="xorg.conf"
-        dest="/etc/X11/xorg.conf"
+#- name: copy new conf1
+#  copy: src="xorg.conf"
+#        dest="/etc/X11/xorg.conf"
 
 - name: Start services sddm
   service:
