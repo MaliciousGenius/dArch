@@ -29,14 +29,6 @@
   copy: src="xorg.conf"
         dest="/etc/X11/xorg.conf"
 
-- name: copy new conf1
-  copy: src="00-touchpad.conf"
-        dest="/etc/X11/xorg.conf.d/00-touchpad.conf"
-
-- name: copy new conf2
-  copy: src="50-synaptics.conf"
-        dest="/etc/X11/xorg.conf.d/50-synaptics.conf"
-
 - name: Start services sddm
   service:
     name: sddm
