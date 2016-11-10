@@ -26,6 +26,10 @@
     - sddm
 
 - name: copy new conf1
+  copy: src="xorg.conf"
+        dest="/etc/X11/xorg.conf"
+
+- name: copy new conf1
   copy: src="00-touchpad.conf"
         dest="/etc/X11/xorg.conf.d/00-touchpad.conf"
 
