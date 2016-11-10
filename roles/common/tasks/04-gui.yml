@@ -4,8 +4,9 @@
     name: "{{ item }}"
     state: present
   with_items:
-    - xorg
     - xorg-server
+    - xorg-server-utils
+    - xf86-video-vesa
     - lxqt
     - lxqt-common
     - lxqt-config
@@ -14,7 +15,6 @@
     - lxqt-qtplugin
     - lxqt-session
     - lxqt-about
-    - lxqt-admin
     - lxqt-globalkeys
     - lxqt-notificationd
     - lxqt-openssh-askpass
@@ -24,6 +24,14 @@
     - qterminal
     - breeze-icons
     - sddm
+
+- name: copy new conf1
+  copy: src="00-touchpad.conf"
+        dest="/etc/X11/xorg.conf.d/00-touchpad.conf"
+
+- name: copy new conf2
+  copy: src="50-synaptics.conf"
+        dest="/etc/X11/xorg.conf.d/50-synaptics.conf"
 
 - name: Start services sddm
   service:
