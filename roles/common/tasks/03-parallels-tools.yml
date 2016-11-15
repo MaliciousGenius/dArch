@@ -5,7 +5,8 @@
     update_cache: yes
   with_items:
     - linux-headers
-#    - python2
+    - dkms
+    - python2
 
 - name: Touch xorg.con
   command: "touch /etc/X11/xorg.conf"
