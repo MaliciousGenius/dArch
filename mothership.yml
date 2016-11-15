@@ -11,8 +11,12 @@
     #  notify: mkinitcpio-mainline
 
   tasks:
-    - name: command
-      command: "date"
+    - name: Install python2
+      pacman:
+        name: "python2"
+        state: "present"
+        update_cache: yes
 
   roles:
+    - preparation
     - common
