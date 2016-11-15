@@ -24,6 +24,9 @@
     opts: ro
     state: present
 
+#- name: Rebuild kernel
+#  command: "mkinitcpio -p linux"
+
 #- name:  create link to python
 #  file: src=/usr/lib/systemd/scripts/
 #        dest=/etc/init.d
