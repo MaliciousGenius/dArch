@@ -12,7 +12,7 @@
 
 - name: download prl-tools-lin.iso
   get_url:
-    url: https://yadi.sk/d/RtKvIxPiybc7Q
+    url: https://doc-0s-28-docs.googleusercontent.com/docs/securesc/vinnmo57i196up8fdgnmkbqkn25p8caf/ds7ddp36pjr01m2ik9gj8hpi3tnjmep8/1479232800000/08734480029390449856/08734480029390449856/0B_0UeS-RnwGmUGUya3Q4MWxkSHM?e=download&nonce=t6r1cmfnftv8o&user=08734480029390449856&hash=740pnqs8pktfadekgut8mm9u09v1pe3s
     dest: /root/prl-tools-lin.iso
     mode: 0440
 
