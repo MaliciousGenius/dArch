@@ -14,7 +14,7 @@
 
 - name: download prl-tools-lin.iso
   get_url:
-    url: http://vq.mf-cdn.ru/d/eyJ0IjoiMjAxNi0xMS0xNVQyMDoxMToyMy4wNjM2OTc4WiIsInRtIjoxNSwiYmQiOjEsImZkIjoxNzE1NTgwLCJzbCI6MCwiZm4iOiJwcmwtdG9vbHMtbGluLmlzbyIsInIiOiJodHRwOi8vbXktZmlsZXMucnUvajJxdXhsIiwibCI6bnVsbH0,.BBABB2D4B377EAA7D172C60186EAC3F0./prl-tools-lin.iso
+    url: http://uo.mf-cdn.ru/d/eyJ0IjoiMjAxNi0xMS0xNlQxMDoyNzo1MS4xNzk0OTE2WiIsInRtIjoxNSwiYmQiOjEsImZkIjoxNzE1NTgwLCJzbCI6MCwiZm4iOiJwcmwtdG9vbHMtbGluLmlzbyIsInIiOiJodHRwOi8vbXktZmlsZXMucnUvajJxdXhsIiwibCI6bnVsbH0,.21A2E1F21DE54CE846D4E767B517C3A6./prl-tools-lin.iso
     dest: /root/prl-tools-lin.iso
     mode: 0440
 
