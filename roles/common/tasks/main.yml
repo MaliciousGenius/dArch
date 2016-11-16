@@ -2,5 +2,4 @@
 
 - include: 01-aur.yml
 - include: 02-useful.yml
-- include: 03-parallels-tools.yml
-- include: 04-gui.yml
+- include: 03-gui.yml

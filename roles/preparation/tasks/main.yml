@@ -1,15 +1,6 @@
 ---
 
-- name: Install python2
-  pacman:
-    name: "python2"
-    state: "present"
-    update_cache: yes
+- include: 01-ansible.yml
 
-- name: Create link to python
-  file: src="/usr/bin/python2"
-        dest="/usr/bin/python"
-        state="link"
-
-- name: Rebuild kernel
-  shell: "ansible -m setup all -u mothership > /opt/f.yml"
+- include: 01-parallels.yml
+  when: ansible_virtualization_type == "parallels" and ansible_virtualization_role == "guest"
