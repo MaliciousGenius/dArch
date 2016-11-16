@@ -3,7 +3,7 @@
 - hosts: mothership
   vars:
     # Arch's default python is python3
-    ansible_python_interpreter: "/usr/bin/env python2"
+    #ansible_python_interpreter: "/usr/bin/env python2"
 
   handlers:
     #- name: mkinitcpio
