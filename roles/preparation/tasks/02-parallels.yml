@@ -19,12 +19,7 @@
     mode: 0440
 
 - name: Mount DVD read-only
-  mount:
-    name: /mnt
-    src: /root/prl-tools-lin.iso
-    fstype: iso9660
-    opts: ro
-    state: present
+  command: "mount -o loop /root/prl-tools-lin.iso /mnt"
 
 - name:  create link to init.d
   file: src=/usr/lib/systemd/scripts/
