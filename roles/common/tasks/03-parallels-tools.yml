@@ -29,10 +29,7 @@
         dest=/etc/init.d
         state=link
 
-#- name:  create link to python
-#  file: src=/usr/bin/python2
-#        dest=/usr/local/bin/python
-#        state=link
+
 
 - name: Rebuild kernel
   command: "yes | /mnt/install -i"

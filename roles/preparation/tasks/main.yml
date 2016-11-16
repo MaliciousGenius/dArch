@@ -1,4 +1,15 @@
 ---
 
+- name: Install python2
+  pacman:
+    name: "python2"
+    state: "present"
+    update_cache: yes
+
+- name: Create link to python
+  file: src="/usr/bin/python2"
+        dest="/usr/local/bin/python"
+        state="link"
+
 - name: Rebuild kernel
   shell: "ansible -m setup all -u mothership > /opt/f.yml"
