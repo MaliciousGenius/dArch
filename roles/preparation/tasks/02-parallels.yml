@@ -18,13 +18,17 @@
     dest: /root/prl-tools-lin.iso
     mode: 0440
 
-- name: Mount DVD read-only
-  command: "mount -o loop /root/prl-tools-lin.iso /mnt"
+- name: Mount ISO
+  mount:
+    name: "/mnt"
+    src: "/root/prl-tools-lin.iso"
+    fstype: "iso9660"
+    state: "present"
 
-- name:  create link to init.d
-  file: src=/usr/lib/systemd/scripts/
-        dest=/etc/init.d
-        state=link
+#- name: Create link to init.d
+#  file: src=/usr/lib/systemd/scripts/
+#        dest=/etc/init.d
+#        state=link
 
 - name: Rebuild kernel
   command: "yes | /mnt/install -i"
