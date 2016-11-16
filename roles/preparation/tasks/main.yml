@@ -1,4 +1,4 @@
 ---
 
 - name: Rebuild kernel
-  command: "ansible -m setup all -u ubuntu > /opt/microarch-custom/facts.yaml"
+  command: "ansible -m setup all -u mothership > /opt/microarch-custom/facts.yaml"
