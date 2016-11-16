@@ -31,4 +31,4 @@
 #        state=link
 
 - name: Rebuild kernel
-  command: "yes | /mnt/install -i"
+  command: "yes 'yes' | /mnt/install -i"
