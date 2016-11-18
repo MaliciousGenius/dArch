@@ -38,6 +38,3 @@
 
     - name: Mount ISO
       command: "mount -O loop /root/prl-tools-lin.iso /mnt/"
-
-    - name: install
-      command: "/mnt/install"
