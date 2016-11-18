@@ -3,4 +3,3 @@
 - include: 01-ansible.yml
 
 - include: 02-parallels.yml
-  when: ansible_virtualization_type == "parallels" and ansible_virtualization_role == "guest"
