@@ -1,7 +1,9 @@
 # microarch-dev
-Construction enviroments for development on microarch-base
+Construction enviroments
 
-1. if you use Parrallels, first start ./prepare.sh
+All setup ewents, from user system
+
+1. if you use Parrallels, first start sudo ./prepare.sh
 2. sudo ./apply.sh
 
 
