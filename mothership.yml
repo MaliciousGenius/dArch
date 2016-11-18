@@ -18,5 +18,5 @@
         update_cache: yes
 
   roles:
-    - preparation
+    - base
     - common
