@@ -29,7 +29,7 @@
     line: 'LANG="ru_RU.UTF-8"'
     state: "present"
 
-- name: Install packages
+- name: Install base packages
   pacman:
     name: "{{ item }}"
     state: "present"

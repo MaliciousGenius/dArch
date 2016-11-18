@@ -41,17 +41,13 @@
       command: "touch /etc/X11/xorg.conf"
       sudo: true
 
-    - name: download prl-tools-lin.iso
+    - name: Download prl-tools-lin.iso
       get_url:
         url: http://1h.mf-cdn.ru/d/eyJ0IjoiMjAxNi0xMS0xOFQxNToxMzoxOS4zMzY5OTUwWiIsInRtIjoxNSwiYmQiOjEsImZkIjoxNzE1NTgwLCJzbCI6MCwiZm4iOiJwcmwtdG9vbHMtbGluLmlzbyIsInIiOiJodHRwOi8vbXktZmlsZXMucnUvajJxdXhsIiwibCI6bnVsbH0,.8055A0519B05D9C91C7F1BB61F9DEE48./prl-tools-lin.iso
-        dest: /tmp/prl-tools-lin.iso
+        dest: "/tmp/prl-tools-lin.iso"
         mode: 0440
       sudo: true
 
     - name: Mount ISO
       command: "mount -o loop /tmp/prl-tools-lin.iso /mnt"
-      sudo: true
-
-    - name: Mount ISO
-      command: "echo 'go to /mnt and run ./install'"
       sudo: true
