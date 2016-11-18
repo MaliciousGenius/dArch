@@ -10,7 +10,7 @@
     - name: Update Arch
       pacman:
         update_cache: yes
-         upgrade: yes
+        upgrade: yes
 
     - name: Install packages
       pacman:
