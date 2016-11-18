@@ -7,6 +7,11 @@
     ansible_python_interpreter: "/usr/bin/env python2"
 
   tasks:
+    - name: Update Arch
+      pacman:
+        update_cache: yes
+         upgrade: yes
+
     - name: Install packages
       pacman:
         name: "{{ item }}"
@@ -38,3 +43,6 @@
 
     - name: Mount ISO
       command: "mount -O loop /root/prl-tools-lin.iso /mnt/"
+
+    - name: Mount ISO
+      command: "echo 'go to /mnt^ and run ./install'"
