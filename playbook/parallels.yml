@@ -43,7 +43,7 @@
 
     - name: Download prl-tools-lin.iso
       get_url:
-        url: http://my-files.ru/Save/j2quxl/prl-tools-lin.iso
+        url: http://1z.mf-cdn.ru/d/eyJ0IjoiMjAxNi0xMS0xOFQyMDozMjoxNC4zNzgzMzM5WiIsInRtIjoxNSwiYmQiOjEsImZkIjoxNzE1NTgwLCJzbCI6MCwiZm4iOiJwcmwtdG9vbHMtbGluLmlzbyIsInIiOiJodHRwOi8vbXktZmlsZXMucnUvajJxdXhsIiwibCI6bnVsbH0,.C55A292B0563AC8010ECB77908105905./prl-tools-lin.iso
         dest: "/tmp/prl-tools-lin.iso"
         mode: 0440
       sudo: true
