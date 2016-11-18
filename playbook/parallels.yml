@@ -49,7 +49,7 @@
       sudo: true
 
     - name: Mount ISO
-      command: "mount -o loop /tmp/prl-tools-lin.iso /mnt/"
+      command: "mount -o loop /tmp/prl-tools-lin.iso /mnt"
       sudo: true
 
     - name: Mount ISO
