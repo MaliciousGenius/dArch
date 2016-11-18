@@ -2,8 +2,11 @@
 
 - hosts: mothership
   vars:
+    ansible_connection: local
     # Arch's default python is python3
     ansible_python_interpreter: "/usr/bin/env python2"
+  sudo: false
+  user: system
 
   handlers:
     #- name: mkinitcpio
@@ -11,11 +14,8 @@
     #  notify: mkinitcpio-mainline
 
   tasks:
-    - name: Install python2
-      pacman:
-        name: "python2"
-        state: "present"
-        update_cache: yes
+    - name: Gen facts
+      shell: "ansible -m setup all -u mothership > /etc/ansible/facts.yml"
 
   roles:
     - base

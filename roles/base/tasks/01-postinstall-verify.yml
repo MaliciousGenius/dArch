@@ -1,6 +1,5 @@
 ---
 
-
 - name: Set hostname
   hostname:
     name: "mothership"
