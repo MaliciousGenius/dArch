@@ -12,6 +12,7 @@
       pacman:
         update_cache: yes
         upgrade: yes
+      sudo: true
 
     - name: Install packages
       pacman:
