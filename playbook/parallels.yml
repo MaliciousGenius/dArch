@@ -37,11 +37,7 @@
         mode: 0440
 
     - name: Mount ISO
-      mount:
-        name: "/mnt"
-        src: "/root/prl-tools-lin.iso"
-        fstype: "iso9660"
-        state: "present"
+      command: "mount -O loop /root/prl-tools-lin.iso /mnt/"
 
-    - name: Rebuild kernel
+    - name: install
       command: "/mnt/install"
