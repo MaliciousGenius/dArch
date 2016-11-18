@@ -21,4 +21,5 @@
   roles:
     - base
     - common
+    - per-admin
 

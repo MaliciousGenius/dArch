@@ -1,5 +1,5 @@
 # microarch-dev
-Construction enviroments
+Construction enviroments Linux v.0.2
 
 All setup ewents, from user system
 
