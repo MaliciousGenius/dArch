@@ -43,7 +43,7 @@
 
     - name: Download prl-tools-lin.iso
       get_url:
-        url: "http://my-files.ru/Save/j2quxl/prl-tools-lin.iso'
+        url: "http://my-files.ru/Save/j2quxl/prl-tools-lin.iso"
         dest: "/tmp/prl-tools-lin.iso"
         mode: 0440
       sudo: true
