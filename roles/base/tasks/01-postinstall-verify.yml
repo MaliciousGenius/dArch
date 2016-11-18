@@ -23,11 +23,11 @@
 - name: Generate locale
   command: "locale-gen"
 
- - name: Config /etc/locale.conf
-   lineinfile:
-     dest: "/etc/locale.conf"
-     line: 'LANG="ru_RU.UTF-8"'
-     state: "present"
+- name: Config /etc/locale.conf
+  lineinfile:
+    dest: "/etc/locale.conf"
+    line: 'LANG="ru_RU.UTF-8"'
+    state: "present"
 
 - name: Install packages
   pacman:
