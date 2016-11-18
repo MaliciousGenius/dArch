@@ -18,6 +18,6 @@
       shell: "ansible -m setup all -u mothership > /etc/ansible/facts.yml"
 
   roles:
-    - ../base
-    - ../common
+    - base
+    - common
 
