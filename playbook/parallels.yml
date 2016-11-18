@@ -53,5 +53,5 @@
       sudo: true
 
     - name: Mount ISO
-      command: "echo 'go to /mnt^ and run ./install'"
+      command: "echo 'go to /mnt and run ./install'"
       sudo: true
