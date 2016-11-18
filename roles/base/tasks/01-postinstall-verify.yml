@@ -3,12 +3,14 @@
 - name: Set hostname
   hostname:
     name: "mothership"
+  sudo: true
 
 - name: Set timezone
   file:
     src: "/usr/share/zoneinfo/Europe/Moscow"
     dest: "/etc/localtime"
     state: "link"
+  sudo: true
 
 - name: Config /etc/locale.gen
   lineinfile:
@@ -19,15 +21,18 @@
   with_items:
     - { line: 'en_US.UTF-8 UTF-8', regexp: '^#en_US.UTF-8 UTF-8' }
     - { line: 'ru_RU.UTF-8 UTF-8', regexp: '^#ru_RU.UTF-8 UTF-8' }
+  sudo: true
 
 - name: Generate locale
   command: "locale-gen"
+  sudo: true
 
 - name: Config /etc/locale.conf
   lineinfile:
     dest: "/etc/locale.conf"
     line: 'LANG="ru_RU.UTF-8"'
     state: "present"
+  sudo: true
 
 - name: Install base packages
   pacman:
@@ -40,12 +45,15 @@
     - grub
     - git
     - ansible
+  sudo: true
 
 - name: Rebuild kernel
   command: "mkinitcpio -p linux"
+  sudo: true
 
 - name: Start services dhcpcd
   service:
     name: "dhcpcd"
     state: "started"
     enabled: yes
+  sudo: true

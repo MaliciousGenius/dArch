@@ -1,4 +1,3 @@
 ---
 
-- include: 01-aur.yml
-- include: 02-gui.yml
+- include: 01-gui.yml
