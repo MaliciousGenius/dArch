@@ -8,7 +8,6 @@
 #systemctl enable mothership-startup.service
 
 echo 'mothership ansible_connection=local' > /etc/ansible/hosts
-
 ansible-playbook ./germination.yml
 cd /opt/microarch-custom & git pull
 cd /opt/microarch-custom

@@ -1,0 +1,52 @@
+---
+
+
+- name: Set hostname
+  hostname:
+    name: "mothership"
+
+- name: Set timezone
+  file:
+    src: "/usr/share/zoneinfo/Europe/Moscow"
+    dest: "/etc/localtime"
+    state: "link"
+
+- name: Config /etc/locale.gen
+  lineinfile:
+    dest: "/etc/locale.gen"
+    line: "{{ item.line }}"
+    regexp: "{{ item.regexp }}"
+    state: "present"
+  with_items:
+    - { line: 'en_US.UTF-8 UTF-8', regexp: '^#en_US.UTF-8 UTF-8' }
+    - { line: 'ru_RU.UTF-8 UTF-8', regexp: '^#ru_RU.UTF-8 UTF-8' }
+
+- name: Generate locale
+  command: "locale-gen"
+
+ - name: Config /etc/locale.conf
+   lineinfile:
+     dest: "/etc/locale.conf"
+     line: 'LANG="ru_RU.UTF-8"'
+     state: "present"
+
+- name: Install packages
+  pacman:
+    name: "{{ item }}"
+    state: "present"
+    update_cache: yes
+  with_items:
+    - base
+    - base-devel
+    - grub
+    - git
+    - ansible
+
+- name: Rebuild kernel
+  command: "mkinitcpio -p linux"
+
+- name: Start services dhcpcd
+  service:
+    name: "dhcpcd"
+    state: "started"
+    enabled: yes

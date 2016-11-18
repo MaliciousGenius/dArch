@@ -1,5 +1,0 @@
----
-
-- include: 01-ansible.yml
-
-- include: 02-parallels.yml

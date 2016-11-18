@@ -1,0 +1,4 @@
+---
+
+- include: 01-postinstall-verify.yml
+- include: 02-gen-facts.yml
