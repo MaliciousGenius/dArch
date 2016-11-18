@@ -28,5 +28,4 @@
 - name: Start services sddm
   service:
     name: "sddm"
-    state: "enable"
     enabled: yes
