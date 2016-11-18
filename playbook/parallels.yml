@@ -1,7 +1,6 @@
 ---
 
 - hosts: all
-  when: ansible_virtualization_type == "parallels" and ansible_virtualization_role == "guest"
   vars:
     # Arch's default python is python3
     ansible_python_interpreter: "/usr/bin/env python2"
