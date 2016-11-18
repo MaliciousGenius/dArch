@@ -6,3 +6,5 @@
   with_items:
     - mc
     - nano
+    - net-tools
+    - pkgfile

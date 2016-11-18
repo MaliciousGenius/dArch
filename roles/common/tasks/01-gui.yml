@@ -1,4 +1,22 @@
-### Maui project (Hawaii)
+### X sysstem
+- name: Install packages
+  pacman:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    # Driver
+    - xf86-video-vesa
+    # X system
+    - xorg-server
+    - xorg-server-utils
+    - xorg-apps
+    # Fonts
+    - ttf-dejavu
+    - ttf-droid
+    - ttf-inconsolata
+
+
+### LXQt 0.11
 - name: Install packages
   pacman:
     name: "{{ item }}"
