@@ -1,6 +1,7 @@
 ---
 
 - hosts: all
+
   vars:
     # Arch's default python is python3
     ansible_python_interpreter: "/usr/bin/env python2"
@@ -31,12 +32,16 @@
 
     - name: download prl-tools-lin.iso
       get_url:
-        url: http://uo.mf-cdn.ru/d/eyJ0IjoiMjAxNi0xMS0xNlQxMDoyNzo1MS4xNzk0OTE2WiIsInRtIjoxNSwiYmQiOjEsImZkIjoxNzE1NTgwLCJzbCI6MCwiZm4iOiJwcmwtdG9vbHMtbGluLmlzbyIsInIiOiJodHRwOi8vbXktZmlsZXMucnUvajJxdXhsIiwibCI6bnVsbH0,.21A2E1F21DE54CE846D4E767B517C3A6./prl-tools-lin.iso
+        url: http://o8.mf-cdn.ru/d/eyJ0IjoiMjAxNi0xMS0xOFQxMjowNDowNi45MjI2NzQ3WiIsInRtIjoxNSwiYmQiOjEsImZkIjoxNzE1NTgwLCJzbCI6MCwiZm4iOiJwcmwtdG9vbHMtbGluLmlzbyIsInIiOiJodHRwOi8vbXktZmlsZXMucnUvajJxdXhsIiwibCI6bnVsbH0,.8430E17A09083A3A90D674DBA3531C67./prl-tools-lin.iso
         dest: /root/prl-tools-lin.iso
         mode: 0440
 
-    - name: Rebuild kernel
-      command: "mount -o loop /root/prl-tools-lin.iso /mnt"
+    - name: Mount ISO
+      mount:
+        name: "/mnt"
+        src: "/root/prl-tools-lin.iso"
+        fstype: "iso9660"
+        state: "present"
 
     - name: Rebuild kernel
       command: "/mnt/install"
