@@ -21,6 +21,11 @@
             dest="/usr/bin/python"
             state="link"
 
+    - name: Create link to init.d
+      file: src="/usr/lib/systemd/scripts/"
+            dest="/etc/init.d"
+            state="link"
+
     - name: Touch xorg.con
       command: "touch /etc/X11/xorg.conf"
 
@@ -30,17 +35,8 @@
         dest: /root/prl-tools-lin.iso
         mode: 0440
 
-    - name: Mount ISO
-      mount:
-        name: "/mnt"
-        src: "/root/prl-tools-lin.iso"
-        fstype: "iso9660"
-        state: "present"
-
-    - name: Create link to init.d
-      file: src="/usr/lib/systemd/scripts/"
-            dest="/etc/init.d"
-            state="link"
+    - name: Rebuild kernel
+      command: "mount -o loop /root/prl-tools-lin.iso /mnt"
 
     - name: Rebuild kernel
       command: "/mnt/install"
