@@ -1,7 +1,6 @@
 ---
 
 - hosts: local
-
   vars:
     ansible_connection: local
     # Arch's default python is python3
