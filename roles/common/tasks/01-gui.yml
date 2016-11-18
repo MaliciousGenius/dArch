@@ -5,24 +5,24 @@
     state: present
   with_items:
     - xorg-server
-    - xorg-server-utils
     - xf86-video-vesa
+#    - xorg-server-utils
     - lxqt
     - lxqt-common
     - lxqt-config
     - lxqt-panel
-    - lxqt-policykit
-    - lxqt-qtplugin
+#    - lxqt-policykit
+#    - lxqt-qtplugin
     - lxqt-session
-    - lxqt-about
-    - lxqt-globalkeys
-    - lxqt-notificationd
-    - lxqt-openssh-askpass
-    - lxqt-powermanagement
-    - lxqt-runner
-    - openbox
-    - qterminal
-    - breeze-icons
+#    - lxqt-about
+#    - lxqt-globalkeys
+#    - lxqt-notificationd
+#    - lxqt-openssh-askpass
+#    - lxqt-powermanagement
+#    - lxqt-runner
+#c   - openbox
+#    - qterminal
+#    - breeze-icons
     - sddm
 
 - name: Start services sddm
