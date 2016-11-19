@@ -1,14 +1,14 @@
 ---
 
 
-- name: Set timezone
+- name: postinstall-verify | Set timezone
   file:
     src: "/usr/share/zoneinfo/Europe/Moscow"
     dest: "/etc/localtime"
     state: "link"
   sudo: true
 
-- name: Config /etc/locale.gen
+- name: postinstall-verify | Config /etc/locale.gen
   lineinfile:
     dest: "/etc/locale.gen"
     line: "{{ item.line }}"
@@ -19,18 +19,18 @@
     - { line: 'ru_RU.UTF-8 UTF-8', regexp: '^#ru_RU.UTF-8 UTF-8' }
   sudo: true
 
-- name: Generate locale
+- name: postinstall-verify | Generate locale
   command: "locale-gen"
   sudo: true
 
-- name: Config /etc/locale.conf
+- name: postinstall-verify | Config /etc/locale.conf
   lineinfile:
     dest: "/etc/locale.conf"
     line: 'LANG="ru_RU.UTF-8"'
     state: "present"
   sudo: true
 
-- name: Install base packages
+- name: postinstall-verify | Install base packages
   pacman:
     name: "{{ item }}"
     state: "present"
@@ -43,11 +43,11 @@
     - ansible
   sudo: true
 
-- name: Rebuild kernel
+- name: postinstall-verify | Rebuild kernel
   command: "mkinitcpio -p linux"
   sudo: true
 
-- name: Start services dhcpcd
+- name: postinstall-verify | Start services dhcpcd
   service:
     name: "dhcpcd"
     state: "started"

@@ -1,12 +1,12 @@
 ---
 
-- name: Update Arch
+- name: vbox | Update Arch
   pacman:
     update_cache: yes
     upgrade: yes
   sudo: true
 
-- name: Install packages
+- name: vbox | Install packages
   pacman:
     name: "{{ item }}"
     state: "present"
@@ -15,6 +15,6 @@
     - virtualbox-guest-utils
   sudo: true
 
-- name: Touch xorg.con
+- name: vbox | Touch xorg.con
   command: "echo 'vboxguest' '\n' 'vboxsf' '\n' 'vboxvideo' > /etc/modules-load.d/virtualbox.conff"
   sudo: true

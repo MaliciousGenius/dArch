@@ -1,6 +1,6 @@
 ---
 
-- name: Install packages
+- name: addition-istall | Install packages
   pacman:
     name: "{{ item }}"
     state: present

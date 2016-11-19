@@ -1,19 +1,19 @@
 ---
 
-- name: Create link to python
+- name: ansible | Create link to python
   file:
     src: "/usr/bin/python2"
     dest: "/usr/bin/python"
     state: "link"
   sudo: true
 
-- name: Create link to init.d
+- name: ansible  Create link to init.d
   file:
     src: "/usr/lib/systemd/scripts/"
     dest: "/etc/init.d"
     state: "link"
   sudo: true
 
-- name: Gen facts
+- name: ansible  Gen facts
   shell: "ansible -m setup all -u mothership > /opt/microarch-custom/facts.yml"
   sudo: true
