@@ -19,6 +19,7 @@
       sudo: true
 
   roles:
+    - vmguest
     - base
     - common
     - admin
