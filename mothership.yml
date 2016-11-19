@@ -15,7 +15,7 @@
 
   tasks:
     - name: Gen facts
-      shell: "ansible -m setup all -u mothership > /etc/ansible/facts.yml"
+      shell: "ansible -m setup all -u mothership > /tmp/facts.yml"
       sudo: true
 
   roles:
