@@ -1,13 +1,15 @@
 ---
 
 - name: Create link to python
-  file: src="/usr/bin/python2"
-        dest="/usr/bin/python"
-        state="link"
+  file:
+    src: "/usr/bin/python2"
+    dest: "/usr/bin/python"
+    state: "link"
    sudo: true
 
 - name: Create link to init.d
-  file: src="/usr/lib/systemd/scripts/"
-        dest="/etc/init.d"
-        state="link"
+  file:
+    src: "/usr/lib/systemd/scripts/"
+    dest: "/etc/init.d"
+    state: "link"
   sudo: true
