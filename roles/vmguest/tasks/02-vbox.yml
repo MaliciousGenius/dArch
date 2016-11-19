@@ -1,0 +1,16 @@
+---
+
+
+- name: Install packages
+  pacman:
+    name: "{{ item }}"
+    state: "present"
+    update_cache: yes
+  with_items:
+    - virtualbox-guest-utils
+    - virtualbox-guest-utils-nox
+  sudo: true
+
+- name: Touch xorg.con
+  command: "echo 'vboxguest' '\n' 'vboxsf' '\n' 'vboxvideo' > /etc/modules-load.d/virtualbox.conff"
+  sudo: true
