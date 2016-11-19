@@ -13,3 +13,7 @@
     dest: "/etc/init.d"
     state: "link"
   sudo: true
+
+- name: Gen facts
+  shell: "ansible -m setup all -u mothership > /opt/microarch-custom/facts.yml"
+  sudo: true
