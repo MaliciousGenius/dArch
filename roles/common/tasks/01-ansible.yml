@@ -5,7 +5,7 @@
     src: "/usr/bin/python2"
     dest: "/usr/bin/python"
     state: "link"
-   sudo: true
+  sudo: true
 
 - name: Create link to init.d
   file:
