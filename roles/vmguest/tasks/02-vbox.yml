@@ -13,8 +13,19 @@
     update_cache: yes
   with_items:
     - virtualbox-guest-utils
+    - virtualbox-guest-utils-nox
+    - virtualbox-guest-modules-arch
+    - virtualbox-guest-dkms
   sudo: true
 
-- name: vbox | Touch xorg.con
-  command: "echo 'vboxguest' '\n' 'vboxsf' '\n' 'vboxvideo' > /etc/modules-load.d/virtualbox.conff"
+- name: Config VirtualBox
+  copy:
+    src: "virtualbox.conf"
+    dest: "/etc/modules-load.d/virtualbox.conf"
+  sudo: true
+
+- name: Start services vboxservice
+  service:
+    name: "vboxservice.service"
+    enabled: yes
   sudo: true

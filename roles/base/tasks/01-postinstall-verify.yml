@@ -53,3 +53,10 @@
     state: "started"
     enabled: yes
   sudo: true
+
+- name: postinstall-verify | Start services sshd
+  service:
+    name: "sshd"
+    state: "started"
+    enabled: yes
+  sudo: true
