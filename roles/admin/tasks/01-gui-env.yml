@@ -38,3 +38,11 @@
     group: users
     mode: 0644
   sudo: true
+
+- name: postinstall-verify | Config /etc/locale.conf
+  lineinfile:
+    dest: "/home/admin/.config/openbox/autostart"
+    line: "tint2 &"
+    regexp: "^#xfce-mcs"
+    state: "present"
+  sudo: true
