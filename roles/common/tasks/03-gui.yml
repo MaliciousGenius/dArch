@@ -1,0 +1,29 @@
+### X sysstem
+- name: GUI | Install packages
+  pacman:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - xf86-video-vesa
+    - xf86-input-synaptics
+    - xorg-server
+    - xorg-server-utils
+    - xorg-xinit
+    - ttf-dejavu
+    - ttf-droid
+    - ttf-inconsolata
+    - openbox
+    - obconf
+    - rxvt-unicode
+    - tilda
+    - sddm
+
+- name: Config /etc/X11/xorg.conf
+  copy:
+    src: "50-synaptics.conf"
+    dest: "/etc/X11/xorg.conf.d/50-synaptics.conf"
+
+- name: Start services sddm
+  service:
+    name: "sddm"
+    enabled: yes

@@ -10,9 +10,13 @@
   copy:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
+    owner: admin
+    group: users
+    mode: 0644
   with_items:
-    - { src: '/etc/xdg/openbox/rc.xml', dest: '~/.config/openbox/rc.xml' }
-    - { src: '/etc/xdg/openbox/menu.xml', dest: '~/.config/openbox/menu.xml' }
-    - { src: '/etc/xdg/openbox/autostart', dest: '~/.config/openbox/autostart' }
-    - { src: '/etc/xdg/openbox/environment', dest: '~/.config/openbox/environment' }
+    - { src: '/etc/xdg/openbox/rc.xml', dest: '/home/admin/.config/openbox/rc.xml' }
+    - { src: '/etc/xdg/openbox/menu.xml', dest: '/home/admin/.config/openbox/menu.xml' }
+    - { src: '/etc/xdg/openbox/autostart', dest: '/home/admin/.config/openbox/autostart' }
+    - { src: '/etc/xdg/openbox/environment', dest: '/home/admin/.config/openbox/environment' }
   sudo: true
+
