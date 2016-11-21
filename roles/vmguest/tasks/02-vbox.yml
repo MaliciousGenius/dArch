@@ -14,7 +14,6 @@
   with_items:
     - virtualbox-guest-utils
     - virtualbox-guest-modules-arch
-    - virtualbox-guest-dkms
   sudo: true
 
 - name: Config VirtualBox
