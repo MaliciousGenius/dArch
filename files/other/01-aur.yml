@@ -24,3 +24,13 @@
   with_items:
     - { line: 'TMPDIR="$HOME"', regexp: '^#TMPDIR="/tmp"' }
     - { line: 'NOCONFIRM=1', regexp: '^#NOCONFIRM=0' }
+
+
+---
+
+- name: postinstall-verify | Start services sshd
+  service:
+    name: "sshd"
+    state: "started"
+    enabled: yes
+  sudo: true
