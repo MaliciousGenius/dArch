@@ -4,5 +4,5 @@
 
 echo 'mothership ansible_connection=local' > /etc/ansible/hosts
 cd /opt/microarch-custom & git pull
-ansible-playbook ./playbook/main.yml
+ansible-playbook ./roles/vmguest/tasks/main.yml
 
