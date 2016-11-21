@@ -15,13 +15,13 @@
     - virtualbox-guest-utils
   sudo: true
 
-- name: Config VirtualBox #Magic
+- name: vbox | Config VirtualBox #Magic
   copy:
     src: "virtualbox.conf"
     dest: "/etc/modprobe.d/virtualbox.conf"
   sudo: true
 
-- name: Config /etc/default/grub #Magic
+- name: vbox | Config /etc/default/grub #Magic
   lineinfile:
     dest: "/etc/default/grub"
     regexp: '^GRUB_CMDLINE_LINUX_DEFAULT'
@@ -29,11 +29,11 @@
     state: "present"
   sudo: true
 
-- name: grub reconf #Magic
+- name: vbox | grub-mkconfig #Magic
   shell: "grub-mkconfig -o /boot/grub/grub.cfg"
   sudo: true
 
-- name: Start services vboxservice
+- name: vbox | Start services vboxservice
   service:
     name: "vboxservice.service"
     enabled: yes

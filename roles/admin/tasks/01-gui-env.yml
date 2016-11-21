@@ -1,0 +1,22 @@
+---
+
+- name: Create conf dir
+  file:
+    path: "~/.config/openbox"
+    state: "directory"
+  sudo: true
+  user: admin
+
+- name: postinstall-verify | Config /etc/locale.gen
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    state: "present"
+  with_items:
+    - { src: '/etc/xdg/openbox/rc.xml', dest: '~/.config/openbox/rc.xml' }
+    - { src: '/etc/xdg/openbox/menu.xml', dest: '~/.config/openbox/menu.xml' }
+    - { src: '/etc/xdg/openbox/autostart', dest: '~/.config/openbox/autostart' }
+    - { src: '/etc/xdg/openbox/environment', dest: '~/.config/openbox/environment' }
+  notify: locale gen
+  sudo: true
+  user: admin
