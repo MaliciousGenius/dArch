@@ -2,7 +2,7 @@
 
 - name: Create conf dir
   file:
-    path: "~/.config/openbox"
+    path: "/home/admin/.config/openbox"
     state: "directory"
   sudo: true
 
