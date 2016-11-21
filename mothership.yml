@@ -20,8 +20,8 @@
       sudo: true
 
   roles:
-    - vmguest
     - base
+    - vmguest
     - common
     - admin
 
