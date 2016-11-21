@@ -14,6 +14,8 @@
     - ttf-inconsolata
     - openbox
     - obconf
+    - obmenu
+    - tint2
     - rxvt-unicode
     - tilda
     - sddm
