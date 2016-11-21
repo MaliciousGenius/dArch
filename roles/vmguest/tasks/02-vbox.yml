@@ -13,7 +13,6 @@
     update_cache: yes
   with_items:
     - virtualbox-guest-utils
-    - virtualbox-guest-modules-arch
   sudo: true
 
 - name: Config VirtualBox
