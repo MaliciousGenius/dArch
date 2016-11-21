@@ -31,7 +31,7 @@
 #    - lxqt-openssh-askpass
 #    - lxqt-powermanagement
 #    - lxqt-runner
-   - openbox
+    - openbox
 #    - qterminal
 #    - breeze-icons
     - sddm
