@@ -18,7 +18,19 @@
 - name: Config VirtualBox
   copy:
     src: "virtualbox.conf"
-    dest: "/etc/modules-load.d/virtualbox.conf"
+    dest: "/etc/modprobe.d/virtualbox.conf"
+  sudo: true
+
+- name: Config /etc/default/grub
+  lineinfile:
+    dest: "/etc/default/grub"
+    regexp: '^GRUB_CMDLINE_LINUX_DEFAULT'
+    line: 'GRUB_CMDLINE_LINUX_DEFAULT="quiet iomem=relaxed"'
+    state: "present"
+  sudo: true
+
+- name: grub reconf
+  shel: "grub-mkconfig -o /boot/grub/grub.cfg"
   sudo: true
 
 - name: Start services vboxservice
