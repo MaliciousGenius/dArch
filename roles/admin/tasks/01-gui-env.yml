@@ -24,7 +24,7 @@
 
 - name: Create conf dir
   file:
-    path: "/home/admin/.config/tint2/"
+    path: "/home/admin/.config/tint2"
     state: "directory"
     owner: admin
     group: users
