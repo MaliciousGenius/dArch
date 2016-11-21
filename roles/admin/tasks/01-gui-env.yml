@@ -24,7 +24,7 @@
 
 - name: Create conf dir
   file:
-    path: "/etc/xdg/tint2/tint2rc"
+    path: "/home/admin/.config/tint2/"
     state: "directory"
     owner: admin
     group: users
