@@ -13,7 +13,6 @@
     update_cache: yes
   with_items:
     - virtualbox-guest-utils
-    - virtualbox-guest-utils-nox
     - virtualbox-guest-modules-arch
     - virtualbox-guest-dkms
   sudo: true
