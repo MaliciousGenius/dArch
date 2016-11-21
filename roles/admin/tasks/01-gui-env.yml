@@ -5,7 +5,6 @@
     path: "~/.config/openbox"
     state: "directory"
   sudo: true
-  user: admin
 
 - name: Config /etc/locale.gen
   copy:
@@ -17,4 +16,3 @@
     - { src: '/etc/xdg/openbox/autostart', dest: '~/.config/openbox/autostart' }
     - { src: '/etc/xdg/openbox/environment', dest: '~/.config/openbox/environment' }
   sudo: true
-  user: admin
