@@ -4,6 +4,8 @@
   file:
     path: "/home/admin/.config/openbox"
     state: "directory"
+    owner: admin
+    group: users
   sudo: true
 
 - name: Config /etc/locale.gen
@@ -20,3 +22,19 @@
     - { src: '/etc/xdg/openbox/environment', dest: '/home/admin/.config/openbox/environment' }
   sudo: true
 
+- name: Create conf dir
+  file:
+    path: "/etc/xdg/tint2/tint2rc"
+    state: "directory"
+    owner: admin
+    group: users
+  sudo: true
+
+- name: Config /etc/locale.gen
+  copy:
+    src: "/etc/xdg/tint2/tint2rc"
+    dest: "/home/admin/.config/tint2/tint2rc"
+    owner: admin
+    group: users
+    mode: 0644
+  sudo: true
