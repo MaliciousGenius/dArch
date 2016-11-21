@@ -4,17 +4,13 @@
     name: "{{ item }}"
     state: present
   with_items:
-    # Driver
-    - xf86-video-vesa
-    # X system
     - xorg-server
     - xorg-server-utils
-    - xorg-apps
+    - xorg-xinit
     # Fonts
     - ttf-dejavu
     - ttf-droid
     - ttf-inconsolata
-
 
 ### LXQt 0.11
 - name: gui | Install packages 2
@@ -35,7 +31,7 @@
 #    - lxqt-openssh-askpass
 #    - lxqt-powermanagement
 #    - lxqt-runner
-#c   - openbox
+   - openbox
 #    - qterminal
 #    - breeze-icons
     - sddm
