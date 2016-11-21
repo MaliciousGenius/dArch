@@ -8,7 +8,6 @@
     - xorg-server
     - xorg-server-utils
     - xorg-xinit
-    # Fonts
     - ttf-dejavu
     - ttf-droid
     - ttf-inconsolata
@@ -32,7 +31,7 @@
 #    - lxqt-openssh-askpass
 #    - lxqt-powermanagement
 #    - lxqt-runner
-    - openbox
+#    - openbox
 #    - qterminal
 #    - breeze-icons
     - sddm

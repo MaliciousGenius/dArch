@@ -1,6 +1,5 @@
 ---
 
-
 - name: postinstall-verify | Set timezone
   file:
     src: "/usr/share/zoneinfo/Europe/Moscow"
@@ -17,10 +16,7 @@
   with_items:
     - { line: 'en_US.UTF-8 UTF-8', regexp: '^#en_US.UTF-8 UTF-8' }
     - { line: 'ru_RU.UTF-8 UTF-8', regexp: '^#ru_RU.UTF-8 UTF-8' }
-  sudo: true
-
-- name: postinstall-verify | Generate locale
-  command: "locale-gen"
+  notify: locale gen
   sudo: true
 
 - name: postinstall-verify | Config /etc/locale.conf
@@ -41,10 +37,7 @@
     - grub
     - git
     - ansible
-  sudo: true
-
-- name: postinstall-verify | Rebuild kernel
-  command: "mkinitcpio -p linux"
+  notify: mkinitcpio
   sudo: true
 
 - name: postinstall-verify | Start services dhcpcd

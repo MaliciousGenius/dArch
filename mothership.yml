@@ -9,9 +9,13 @@
   user: system
 
   handlers:
-    #- name: mkinitcpio
-    #  command: mkinitcpio -p linux
-    #  notify: mkinitcpio-mainline
+    - name: locale gen
+      shell: locale-gen
+      sudo: true
+
+    - name: mkinitcpio
+      command: mkinitcpio -p linux
+      sudo: true
 
   tasks:
     - name: Set hostname
