@@ -18,13 +18,16 @@
     name: "{{ item }}"
     state: present
   with_items:
-    - lxqt
-    - lxqt-common
-    - lxqt-config
-    - lxqt-panel
+    - openbox
+    - obconf
+    - sddm
+#    - lxqt
+#    - lxqt-common
+#    - lxqt-config
+#    - lxqt-panel
 #    - lxqt-policykit
 #    - lxqt-qtplugin
-    - lxqt-session
+#    - lxqt-session
 #    - lxqt-about
 #    - lxqt-globalkeys
 #    - lxqt-notificationd
@@ -34,7 +37,7 @@
 #    - openbox
 #    - qterminal
 #    - breeze-icons
-    - sddm
+
 
 - name: Start services sddm
   service:
