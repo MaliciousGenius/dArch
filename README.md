@@ -1,9 +1,9 @@
 # microarch-dev
 Construction enviroments Linux v.0.2
 
-All setup ewents, from user system
+All setup tasks, from user system and only VirtualBox 5.0
 
-1. if you use Parrallels, first start sudo ./prepare.sh
+1. cd /opt/microarch-custom
 2. sudo ./apply.sh
 
 

@@ -11,11 +11,12 @@
     name: "{{ item }}"
     state: present
   with_items:
-    #- base
-    #- base-devel
-    #- grub
-    #- git
-    #- ansible
+    - base
+    - base-devel
+    - grub
+    - git
+    - ansible
     - linux-headers
     - cmake
     - python2
+  sudo: true
