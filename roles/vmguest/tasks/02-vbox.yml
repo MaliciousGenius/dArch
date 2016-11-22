@@ -9,11 +9,11 @@
     - virtualbox-guest-utils
   sudo: true
 
-#- name: vbox | Config VirtualBox #Magic
-#  copy:
-#    src: "virtualbox.conf"
-#    dest: "/etc/modprobe.d/virtualbox.conf"
-#  sudo: true
+- name: vbox | Config VirtualBox #Magic
+  copy:
+    src: "virtualbox.conf"
+    dest: "/etc/modprobe.d/virtualbox.conf"
+  sudo: true
 
 #- name: vbox | Config /etc/default/grub #Magic
 #  lineinfile:
