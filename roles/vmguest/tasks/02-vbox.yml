@@ -1,11 +1,5 @@
 ---
 
-- name: vbox | Update Arch
-  pacman:
-    update_cache: yes
-    upgrade: yes
-  sudo: true
-
 - name: vbox | Install packages
   pacman:
     name: "{{ item }}"
