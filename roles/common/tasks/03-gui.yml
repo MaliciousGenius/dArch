@@ -5,20 +5,25 @@
     name: "{{ item }}"
     state: present
   with_items:
+    # Driver
     - xf86-video-vesa
     - xf86-input-synaptics
+    # X system
     - xorg-server
     - xorg-server-utils
     - xorg-xinit
+    # Font
     - ttf-dejavu
     - ttf-droid
     - ttf-inconsolata
+    # WM
     - openbox
     - obconf
     - obmenu
     #- xfce4-settings
     #- tint2
     #- rxvt-unicode
+    # Logon
     - sddm
   sudo: true
 
@@ -37,6 +42,12 @@
   with_items:
     - tilda
     - firefox
+  sudo: true
+
+- name: GUI | Config /etc/X11/xorg.conf.d/10-monitor.conf
+  copy:
+    src: "10-monitor.conf"
+    dest: "/etc/X11/xorg.conf.d/10-monitor.conf"
   sudo: true
 
 - name: GUI | Config /etc/X11/xorg.conf.d/50-synaptics.conf
