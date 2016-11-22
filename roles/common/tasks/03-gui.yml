@@ -20,9 +20,6 @@
     - openbox
     - obconf
     - obmenu
-    #- xfce4-settings
-    #- tint2
-    #- rxvt-unicode
     # Logon
     - sddm
   sudo: true
@@ -32,16 +29,29 @@
     name: "{{ item }}"
     state: "present"
   with_items:
-    - lxqt
+    - lxqt-common
+    - lxqt-config
+    - lxqt-panel
+    - lxqt-policykit
+    - lxqt-qtplugin
+    - lxqt-session
+    - pcmanfm-qt
+    - lxqt-about
+    - lxqt-admin
+    - lxqt-globalkeys
+    - lxqt-notificationd
+    - lxqt-openssh-askpass
+    - lxqt-powermanagement
+    - lxqt-runner
   sudo: true
 
-#- name: GUI | Install utills packages
-#  pacman:
-#    name: "{{ item }}"
-#    state: "present"
-#  with_items:
-#    - tilda
-#  sudo: true
+- name: GUI | Install utills packages
+  pacman:
+    name: "{{ item }}"
+    state: "present"
+  with_items:
+    - tilda
+  sudo: true
 
 #- name: GUI | Config /etc/X11/xorg.conf.d/10-monitor.conf
 #  copy:
@@ -49,11 +59,11 @@
 #    dest: "/etc/X11/xorg.conf.d/10-monitor.conf"
 #  sudo: true
 
-#- name: GUI | Config /etc/X11/xorg.conf.d/50-synaptics.conf
-#  copy:
-#    src: "50-synaptics.conf"
-#    dest: "/etc/X11/xorg.conf.d/50-synaptics.conf"
-#  sudo: true
+- name: GUI | Config /etc/X11/xorg.conf.d/50-synaptics.conf
+  copy:
+    src: "50-synaptics.conf"
+    dest: "/etc/X11/xorg.conf.d/50-synaptics.conf"
+  sudo: true
 
 - name: GUI | Enable services sddm
   service:
