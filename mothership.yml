@@ -10,11 +10,15 @@
 
   handlers:
     - name: locale gen
-      shell: locale-gen
+      shell: "locale-gen"
       sudo: true
 
     - name: mkinitcpio
-      command: mkinitcpio -p linux
+      shell: "mkinitcpio -p linux"
+      sudo: true
+
+    - name: grub mkconfig
+      shell: "grub-mkconfig -o /boot/grub/grub.cfg"
       sudo: true
 
   tasks:

@@ -7,10 +7,7 @@
     update_cache: yes
   with_items:
     - virtualbox-guest-utils
-  sudo: true
-
-- name: vbox | grub-mkconfig #Magic
-  shell: "grub-mkconfig -o /boot/grub/grub.cfg"
+  notify: grub mkconfig
   sudo: true
 
 - name: vbox | Start services vboxservice
