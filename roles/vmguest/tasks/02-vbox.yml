@@ -9,23 +9,23 @@
     - virtualbox-guest-utils
   sudo: true
 
-- name: vbox | Config VirtualBox #Magic
-  copy:
-    src: "virtualbox.conf"
-    dest: "/etc/modprobe.d/virtualbox.conf"
-  sudo: true
+#- name: vbox | Config VirtualBox #Magic
+#  copy:
+#    src: "virtualbox.conf"
+#    dest: "/etc/modprobe.d/virtualbox.conf"
+#  sudo: true
 
-- name: vbox | Config /etc/default/grub #Magic
-  lineinfile:
-    dest: "/etc/default/grub"
-    regexp: '^GRUB_CMDLINE_LINUX_DEFAULT'
-    line: 'GRUB_CMDLINE_LINUX_DEFAULT="quiet iomem=relaxed"'
-    state: "present"
-  sudo: true
+#- name: vbox | Config /etc/default/grub #Magic
+#  lineinfile:
+#    dest: "/etc/default/grub"
+#    regexp: '^GRUB_CMDLINE_LINUX_DEFAULT'
+#    line: 'GRUB_CMDLINE_LINUX_DEFAULT="quiet iomem=relaxed"'
+#    state: "present"
+#  sudo: true
 
-- name: vbox | grub-mkconfig #Magic
-  shell: "grub-mkconfig -o /boot/grub/grub.cfg"
-  sudo: true
+#- name: vbox | grub-mkconfig #Magic
+#  shell: "grub-mkconfig -o /boot/grub/grub.cfg"
+#  sudo: true
 
 - name: vbox | Start services vboxservice
   service:
