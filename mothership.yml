@@ -31,4 +31,5 @@
     - base
     - vmguest
     - common
+    - docker
 
