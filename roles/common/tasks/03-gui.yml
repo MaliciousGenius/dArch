@@ -42,11 +42,11 @@
 
   sudo: true
 
-- name: GUI | Config /etc/X11/xorg.conf.d/10-monitor.conf
-  copy:
-    src: "10-monitor.conf"
-    dest: "/etc/X11/xorg.conf.d/10-monitor.conf"
-  sudo: true
+#- name: GUI | Config /etc/X11/xorg.conf.d/10-monitor.conf
+#  copy:
+#    src: "10-monitor.conf"
+#    dest: "/etc/X11/xorg.conf.d/10-monitor.conf"
+#  sudo: true
 
 - name: GUI | Config /etc/X11/xorg.conf.d/50-synaptics.conf
   copy:
