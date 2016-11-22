@@ -29,19 +29,7 @@
     name: "{{ item }}"
     state: "present"
   with_items:
-    - lxqt-common
-    - lxqt-config
-    - lxqt-panel
-    - lxqt-policykit
-    - lxqt-qtplugin
-    - lxqt-session
-    - lxqt-about
-    - lxqt-globalkeys
-    - lxqt-notificationd
-    - lxqt-openssh-askpass
-    - lxqt-powermanagement
-    - lxqt-runner
-    - lxqt-sudo
+    - lxqt
   sudo: true
 
 - name: GUI | Install utills packages
@@ -49,7 +37,7 @@
     name: "{{ item }}"
     state: "present"
   with_items:
-    - rxvt-unicode
+    - terminator
 
   sudo: true
 
