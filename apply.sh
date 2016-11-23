@@ -7,5 +7,5 @@
 #systemctl enable mothership-startup.service
 
 echo 'mothership ansible_connection=local' > /etc/ansible/hosts
-cd /opt/microarch-custom & git pull
+cd /opt/dArch & git pull
 ansible-playbook ./mothership.yml
