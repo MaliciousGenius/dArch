@@ -1,1 +1,2 @@
 compton -b -c &
+tint2 &
