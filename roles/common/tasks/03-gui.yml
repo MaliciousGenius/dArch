@@ -49,15 +49,15 @@
 
 - name: Copy config openbox
   copy:
-    src: "./openbox/menu.xml"
-    dest: "/home/admin/.config/openbox/menu.xml"
-    line: "{{ item.line }}"
-    regexp: "{{ item.regexp }}"
-    state: "present"
+    src: "{{ item.src }}"
+    dest: {{ item.dest }}"
+    owner: admin
+    group: users
+    mode: 0755
   with_items:
-    - { line: 'TMPDIR="$HOME"', regexp: '^#TMPDIR="/tmp"' }
-    - { line: 'NOCONFIRM=1', regexp: '^#NOCONFIRM=0' }
-
+    - { src: "openbox/menu.xml", dest: "/home/admin/.config/openbox/menu.xml" }
+    - { src: "openbox/autostart", dest: "/home/admin/.config/openbox/autostart" }
+    - { src: "openbox/environment", dest: "/home/admin/.config/openbox/environment" }
 
 - name: GUI | Enable services sddm
   service:

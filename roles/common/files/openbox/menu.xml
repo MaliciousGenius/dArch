@@ -80,7 +80,7 @@
       <command>urxvt</command>
     </action>
   </item>
-  <item label="Gnome Terminal">
+  <item label="QT Terminal">
     <action name="Execute">
       <command>qtterminal</command>
       <startupnotify>

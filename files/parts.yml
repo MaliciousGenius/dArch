@@ -1,0 +1,15 @@
+#== Copy ==#
+
+#=== one ===#
+
+#=== multi ===#
+- name: Copy
+  copy:
+    src: "{{ item.src }}"
+    dest: {{ item.dest }}"
+    owner: admin
+    group: users
+    mode: 0755
+  with_items:
+    - { src: "openbox/menu.xml", dest: "/home/admin/.config/openbox/menu.xml" }
+    - { src: "openbox/autostart", dest: "/home/admin/.config/openbox/autostart" }
