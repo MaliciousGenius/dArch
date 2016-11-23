@@ -82,7 +82,7 @@
   </item>
   <item label="Gnome Terminal">
     <action name="Execute">
-      <command>gnome-terminal</command>
+      <command>qtterminal</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
