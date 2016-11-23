@@ -7,6 +7,8 @@
     update_cache: yes
   with_items:
     - virtualbox-guest-utils
+    - virtualbox-guest-dkms
+    - virtualbox-guest-modules-arch
   notify: "grub mkconfig"
   sudo: true
 
