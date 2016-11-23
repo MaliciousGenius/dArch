@@ -1,6 +1,6 @@
 ---
 
-- name: TUI | Install packages
+- name: utility | Install packages
   pacman:
     name: "{{ item }}"
     state: "present"

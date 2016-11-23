@@ -1,4 +1,4 @@
-#== Copy ==#
+#== Копирование файлов ==#
 
 #=== one ===#
 
@@ -13,3 +13,24 @@
   with_items:
     - { src: "openbox/menu.xml", dest: "/home/admin/.config/openbox/menu.xml" }
     - { src: "openbox/autostart", dest: "/home/admin/.config/openbox/autostart" }
+
+#== Создание директориий ==#
+
+#=== one ===#
+- name: Create marker
+  file:
+    path: "/etc/motherchip"
+    state: "directory"
+    mode: "0755"
+#=== multi ===#
+
+#== Запуск сервисов ==#
+
+#=== one ===#
+- name: Start services dhcpcd
+  service:
+    name: "dhcpcd"
+    state: "started"
+    enabled: yes
+  sudo: true
+#=== multi ===#

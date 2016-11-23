@@ -1,6 +1,6 @@
 ---
 
-- hosts: mothership
+- hosts: "mothership"
   vars:
     ansible_connection: local
     # Arch's default python is python3
@@ -31,5 +31,6 @@
     - base
     - vmguest
     - common
+    - gui
     - docker
 

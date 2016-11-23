@@ -1,5 +1,8 @@
 ---
 
-- include: 01-ansible.yml
-- include: 02-tui.yml
-- include: 03-gui.yml
+- name: Create marker
+  file:
+    path: "/etc/motherchip"
+    state: "directory"
+    mode: "0755"
+  sudo: true

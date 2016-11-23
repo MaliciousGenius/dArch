@@ -16,7 +16,7 @@
   with_items:
     - { line: 'en_US.UTF-8 UTF-8', regexp: '^#en_US.UTF-8 UTF-8' }
     - { line: 'ru_RU.UTF-8 UTF-8', regexp: '^#ru_RU.UTF-8 UTF-8' }
-  notify: locale gen
+  notify: "locale gen"
   sudo: true
 
 - name: postinstall-verify | Config /etc/locale.conf
@@ -37,7 +37,7 @@
     - grub
     - git
     - ansible
-  notify: mkinitcpio
+  notify: "mkinitcpio"
   sudo: true
 
 - name: postinstall-verify | Start services dhcpcd

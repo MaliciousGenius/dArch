@@ -6,10 +6,10 @@
     upgrade: yes
   sudo: true
 
-- name: building-system | Install packages
+- name: building-system | Install base (all) packages for bulding
   pacman:
     name: "{{ item }}"
-    state: present
+    state: "present"
   with_items:
     - base
     - base-devel

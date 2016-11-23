@@ -2,3 +2,5 @@
 
 - include: 01-postinstall-verify.yml
 - include: 02-building-system.yml
+- include: 03-utility.yml
+- include: 04-ansible.yml

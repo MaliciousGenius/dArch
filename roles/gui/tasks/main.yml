@@ -1,14 +1,14 @@
 ---
 
-- name: GUI | Install base packages
+- name: Install X system packages
   pacman:
     name: "{{ item }}"
-    state: present
+    state: "present"
   with_items:
     # Driver
     - xf86-video-vesa
     - xf86-input-synaptics
-    # X system
+    # X
     - xorg-server
     - xorg-server-utils
     - xorg-xinit
@@ -20,7 +20,7 @@
     - sddm
   sudo: true
 
-- name: GUI | Install LXQt packages
+- name: Install DE packages
   pacman:
     name: "{{ item }}"
     state: "present"
@@ -35,7 +35,7 @@
     - tint2
   sudo: true
 
-- name: GUI | Install utills packages
+- name: Install X utilit packages
   pacman:
     name: "{{ item }}"
     state: "present"
@@ -51,16 +51,18 @@
   copy:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
-    owner: admin
-    group: users
-    mode: 0755
+    owner: "admin"
+    group: "users"
+    mode: "0755"
   with_items:
     - { src: "openbox/menu.xml", dest: "/home/admin/.config/openbox/menu.xml" }
     - { src: "openbox/autostart", dest: "/home/admin/.config/openbox/autostart" }
     - { src: "openbox/environment", dest: "/home/admin/.config/openbox/environment" }
+  sudo: true
 
-- name: GUI | Enable services sddm
+- name: Enable services sddm
   service:
     name: "sddm"
+    state: "started"
     enabled: yes
   sudo: true
