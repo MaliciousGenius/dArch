@@ -16,10 +16,6 @@
     - ttf-dejavu
     - ttf-droid
     - ttf-inconsolata
-    # WM
-    - openbox
-    - obconf
-    - obmenu
     # Logon
     - sddm
   sudo: true
@@ -29,7 +25,14 @@
     name: "{{ item }}"
     state: "present"
   with_items:
-    - lxqt
+    # WM
+    - openbox
+    - obconf
+    - obmenu
+    # Compositor
+    - compton
+    # Panel
+    - tint2
   sudo: true
 
 - name: GUI | Install utills packages
@@ -37,7 +40,11 @@
     name: "{{ item }}"
     state: "present"
   with_items:
+    # Terminal emulator
+    - qterminal
+    # Browser
     - firefox
+    - firefox-i18n-ru
   sudo: true
 
 - name: GUI | Enable services sddm
