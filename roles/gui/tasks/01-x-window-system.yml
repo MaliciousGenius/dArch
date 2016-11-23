@@ -1,21 +1,30 @@
 ---
 
+- name: x-window-system | Install Driver
+  pacman:
+    name: "{{ item }}"
+    state: "present"
+  with_items:
+    - xf86-video-vesa
+    - xf86-input-synaptics
+  sudo: true
+
 - name: x-window-system | Install X system packages
   pacman:
     name: "{{ item }}"
     state: "present"
   with_items:
-    # Driver
-    - xf86-video-vesa
-    - xf86-input-synaptics
-    # X
     - xorg-server
     - xorg-server-utils
     - xorg-xinit
-    # Font
+  sudo: true
+
+- name: x-window-system | Install Font
+  pacman:
+    name: "{{ item }}"
+    state: "present"
+  with_items:
     - ttf-dejavu
     - ttf-droid
     - ttf-inconsolata
-    # Logon
-    - sddm
   sudo: true

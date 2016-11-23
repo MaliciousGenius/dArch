@@ -32,7 +32,7 @@
     - { src: "openbox/environment", dest: "/home/admin/.config/openbox/environment" }
   sudo: true
 
-- name: Delite /usr/share/xsessions/openbox-kde.desktop
+- name: window-manager | Delite /usr/share/xsessions/openbox-kde.desktop
   file:
     state: "absent"
     path: "/usr/share/xsessions/openbox-kde.desktop"

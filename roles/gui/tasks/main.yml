@@ -11,6 +11,7 @@
   ##########
     - compton
     - tint2
+    - sddm
   ##########
     # Terminal emulator
     - qterminal
