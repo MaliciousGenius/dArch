@@ -1,7 +1,4 @@
 ---
 
-#- include: 01-parallels.yml
-#  when: virtualbox_remove_os_packages is defined and virtualbox_remove_os_packages
-
-- include: 02-vbox.yml
+- include: 01-vbox.yml
   when: ansible_os_family == "Archlinux" and ansible_virtualization_type == "virtualbox"

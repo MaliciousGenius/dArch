@@ -21,6 +21,10 @@
       shell: "grub-mkconfig -o /boot/grub/grub.cfg"
       sudo: true
 
+    - name: update initramfs
+      shell: "update-initramfs -u -k all"
+      sudo: true
+
   tasks:
     - name: Set hostname
       hostname:
