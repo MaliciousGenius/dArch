@@ -47,6 +47,18 @@
     - firefox-i18n-ru
   sudo: true
 
+- name: Copy config openbox
+  copy:
+    src: "openbox/menu.xml"
+    dest: "/home/admin/.config/openbox/menu.xml"
+    line: "{{ item.line }}"
+    regexp: "{{ item.regexp }}"
+    state: "present"
+  with_items:
+    - { line: 'TMPDIR="$HOME"', regexp: '^#TMPDIR="/tmp"' }
+    - { line: 'NOCONFIRM=1', regexp: '^#NOCONFIRM=0' }
+
+
 - name: GUI | Enable services sddm
   service:
     name: "sddm"
