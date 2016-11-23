@@ -22,8 +22,8 @@
 
 - name: x-window-system  | Load VirtualBox module
   copy:
-    src: "xorg.conf.d/40-monitor.conf"
-    dest: "/etc/X11/xorg.conf.d/40-monitor.conf"
+    src: "x11/xorg.conf"
+    dest: "/etc/X11/xorg.conf"
   sudo: true
 
 - name: x-window-system | Install Font
