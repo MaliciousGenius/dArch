@@ -48,11 +48,11 @@
 #    dest: "/etc/X11/xorg.conf.d/10-monitor.conf"
 #  sudo: true
 
-- name: GUI | Config /etc/X11/xorg.conf.d/50-synaptics.conf
-  copy:
-    src: "50-synaptics.conf"
-    dest: "/etc/X11/xorg.conf.d/50-synaptics.conf"
-  sudo: true
+#- name: GUI | Config /etc/X11/xorg.conf.d/50-synaptics.conf
+#  copy:
+#    src: "50-synaptics.conf"
+#    dest: "/etc/X11/xorg.conf.d/50-synaptics.conf"
+#  sudo: true
 
 - name: GUI | Enable services sddm
   service:
