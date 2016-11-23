@@ -15,7 +15,7 @@
   copy:
     src: "blacklist.conf"
     dest: "/etc/modprobe.d/blacklist.conf"
-  notify: "update initramfs"
+  notify: "mkinitcpio"
   sudo: true
 
 - name: vbox | Start services vboxservice
