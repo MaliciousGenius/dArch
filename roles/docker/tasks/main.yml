@@ -1,0 +1,13 @@
+---
+
+- name: Docker | Install
+  pacman:
+    name: "docker"
+    state: "present"
+    update_cache: yes
+
+- name: Docker | Start services docker
+  service:
+    name: "docker"
+    enabled: yes
+  sudo: true
