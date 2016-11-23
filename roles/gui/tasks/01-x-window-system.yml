@@ -6,6 +6,7 @@
     state: "present"
   with_items:
     - xf86-video-vesa
+    - xf86-video-fbdev          # Пакет содержит драйвер для кадрового буфера Linux (еще известный как fbdev).
     - xf86-input-synaptics
   sudo: true
 
