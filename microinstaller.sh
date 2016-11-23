@@ -39,7 +39,7 @@ generation_fstab() {
 
 # Загружаю сктипт начальных настроек
 get_preparatory_script() {
-    wget https://raw.githubusercontent.com/MaliciousGenius/microarch-base/master/preparatory-script.sh -O /mnt/root/microinstaller-chroot.sh
+    wget https://raw.githubusercontent.com/MaliciousGenius/dArch/master/microinstaller-chroot.sh -O /mnt/root/microinstaller-chroot.sh
     chmod +x /mnt/root/microinstaller-chroot.sh
 }
 

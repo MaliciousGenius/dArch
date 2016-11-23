@@ -78,8 +78,7 @@ configure_git(){
 # Загрузка репозитория microarch-custom
 get_repo_microarch(){
     cd /opt
-    git clone https://github.com/MaliciousGenius/microarch-base.git
-    git clone https://github.com/MaliciousGenius/microarch-custom.git
+    git clone https://github.com/MaliciousGenius/dArch.git
 }
 
 configure_hostname
