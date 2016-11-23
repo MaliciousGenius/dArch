@@ -1,7 +1,12 @@
 #== Копирование файлов ==#
 
 #=== one ===#
-
+- name: vbox | Load VirtualBox module
+  copy:
+    src: "modules-load.d/virtualbox.conf"
+    dest: "/etc/modules-load.d/virtualbox.conf"
+  notify: "mkinitcpio"
+  sudo: true
 #=== multi ===#
 - name: Copy
   copy:
