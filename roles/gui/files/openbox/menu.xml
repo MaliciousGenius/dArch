@@ -82,7 +82,7 @@
   </item>
   <item label="QT Terminal">
     <action name="Execute">
-      <command>qtterminal</command>
+      <command>qterminal</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
