@@ -47,6 +47,15 @@
     - firefox-i18n-ru
   sudo: true
 
+- name: Create dir
+  file:
+    path: "/home/admin/.config/openbox"
+    state: "directory"
+    owner: "admin"
+    group: "users"
+    mode: "0755"
+  sudo: true
+
 - name: Copy config openbox
   copy:
     src: "{{ item.src }}"
