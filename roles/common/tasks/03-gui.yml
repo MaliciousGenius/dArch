@@ -50,7 +50,7 @@
 - name: Copy config openbox
   copy:
     src: "{{ item.src }}"
-    dest: {{ item.dest }}"
+    dest: "{{ item.dest }}"
     owner: admin
     group: users
     mode: 0755
