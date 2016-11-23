@@ -1,72 +1,22 @@
 ---
 
-- name: Install X system packages
-  pacman:
-    name: "{{ item }}"
-    state: "present"
-  with_items:
-    # Driver
-    - xf86-video-vesa
-    - xf86-input-synaptics
-    # X
-    - xorg-server
-    - xorg-server-utils
-    - xorg-xinit
-    # Font
-    - ttf-dejavu
-    - ttf-droid
-    - ttf-inconsolata
-    # Logon
-    - sddm
-  sudo: true
-
-- name: Install DE packages
-  pacman:
-    name: "{{ item }}"
-    state: "present"
-  with_items:
-    # WM
-    - openbox
-    - obconf
-    - obmenu
-    # Compositor
-    - compton
-    # Panel
-    - tint2
-  sudo: true
+- include: 01-x-window-system
+- include: 02-window-manager.yml
 
 - name: Install X utilit packages
   pacman:
     name: "{{ item }}"
     state: "present"
   with_items:
+  ##########
+    - compton
+    - tint2
+  ##########
     # Terminal emulator
     - qterminal
     # Browser
     - firefox
     - firefox-i18n-ru
-  sudo: true
-
-- name: Create dir
-  file:
-    path: "/home/admin/.config/openbox"
-    state: "directory"
-    owner: "admin"
-    group: "users"
-    mode: "0755"
-  sudo: true
-
-- name: Copy config openbox
-  copy:
-    src: "{{ item.src }}"
-    dest: "{{ item.dest }}"
-    owner: "admin"
-    group: "users"
-    mode: "0755"
-  with_items:
-    - { src: "openbox/menu.xml", dest: "/home/admin/.config/openbox/menu.xml" }
-    - { src: "openbox/autostart", dest: "/home/admin/.config/openbox/autostart" }
-    - { src: "openbox/environment", dest: "/home/admin/.config/openbox/environment" }
   sudo: true
 
 - name: Enable services sddm
