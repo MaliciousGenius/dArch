@@ -49,7 +49,7 @@
 
 - name: Copy config openbox
   copy:
-    src: "openbox/menu.xml"
+    src: "./openbox/menu.xml"
     dest: "/home/admin/.config/openbox/menu.xml"
     line: "{{ item.line }}"
     regexp: "{{ item.regexp }}"
