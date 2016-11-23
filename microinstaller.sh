@@ -29,7 +29,7 @@ mount_partition() {
 
 # Устанавливаю набор базовах патетов
 install_packages() {
-    pacstrap /mnt base grub git ansible
+    pacstrap /mnt base base-devel grub git ansible
 }
 
 # Генерирую fstab
