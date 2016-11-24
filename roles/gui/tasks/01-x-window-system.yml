@@ -23,11 +23,11 @@
     - xterm
   sudo: true
 
-#- name: x-window-system  | Load VirtualBox module
-#  copy:
-#    src: "x11/xorg.conf"
-#    dest: "/etc/X11/xorg.conf"
-#  sudo: true
+- name: x-window-system  | Load VirtualBox module
+  copy:
+    src: "x11/xorg.conf"
+    dest: "/etc/X11/xorg.conf"
+  sudo: true
 
 - name: x-window-system | Install Font
   pacman:

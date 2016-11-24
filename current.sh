@@ -8,4 +8,4 @@
 
 echo 'mothership ansible_connection=local' > /etc/ansible/hosts
 cd /opt/dArch & git pull
-ansible-playbook ./curent.yml
+ansible-playbook ./current.yml
