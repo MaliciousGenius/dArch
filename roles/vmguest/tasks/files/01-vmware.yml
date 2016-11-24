@@ -1,0 +1,15 @@
+---
+
+- name: Install
+  pacman:
+    name: "open-vm-tools"
+    state: "present"
+    update_cache: yes
+  sudo: true
+
+- name: vbox | Load VirtualBox module
+  copy:
+    src: "modules-load.d/vmware.conf"
+    dest: "/etc/modules-load.d/vmware.conf"
+  notify: "mkinitcpio"
+  sudo: true
