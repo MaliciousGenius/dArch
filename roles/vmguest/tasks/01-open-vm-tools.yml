@@ -17,6 +17,6 @@
 - name: open-vm-tools | Start services vmtoolsd
   service:
     name: "vmtoolsd"
-    state: "vmtoolsd"
+    state: "started"
     enabled: yes
   sudo: true
