@@ -5,6 +5,9 @@
   copy:
     src: "modules-load.d/virtualbox.conf"
     dest: "/etc/modules-load.d/virtualbox.conf"
+    owner: admin
+    group: users
+    mode: 0755
   notify: "mkinitcpio"
   sudo: true
 #=== multi ===#

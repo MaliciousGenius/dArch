@@ -1,3 +1,2 @@
-vmware-user-suid-wrapper &
 compton -b -c &
 tint2 &
