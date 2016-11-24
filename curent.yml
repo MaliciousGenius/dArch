@@ -1,0 +1,33 @@
+---
+
+- hosts: "mothership"
+  vars:
+    ansible_connection: local
+    # Arch's default python is python3
+    ansible_python_interpreter: "/usr/bin/env python2"
+  sudo: false
+  user: system
+
+  handlers:
+    - name: locale gen
+      shell: "locale-gen"
+      sudo: true
+
+    - name: mkinitcpio
+      shell: "mkinitcpio -p linux"
+      sudo: true
+
+    - name: grub mkconfig
+      shell: "grub-mkconfig -o /boot/grub/grub.cfg"
+      sudo: true
+
+  tasks:
+    - name: Set hostname
+      hostname:
+        name: "mothership"
+      sudo: true
+
+  roles:
+    - vmguest
+    - gui
+
