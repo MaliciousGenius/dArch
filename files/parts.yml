@@ -39,3 +39,39 @@
     enabled: yes
   sudo: true
 #=== multi ===#
+
+
+#== Установка пакетов ==#
+
+#=== one ===#
+- name: Install
+  pacman:
+    name: "docker"
+    state: "present"
+    update_cache: yes
+  sudo: true
+#=== multi ===#
+- name: x-window-system | Install Driver
+  pacman:
+    name: "{{ item }}"
+    state: "present"
+  with_items:
+    - xf86-video-vesa
+    - xf86-video-fbdev          # Пакет содержит драйвер для кадрового буфера Linux (еще известный как fbdev).
+    - xf86-input-synaptics
+  sudo: true
+
+
+
+
+#== Создание директориий ==#
+
+#=== one ===#
+
+#=== multi ===#
+
+#== Запуск сервисов ==#
+
+#=== one ===#
+
+#=== multi ===#
