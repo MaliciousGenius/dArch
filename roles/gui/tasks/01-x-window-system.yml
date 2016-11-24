@@ -25,11 +25,7 @@
     - xterm
   sudo: true
 
-- name: x-window-system | Copy Xwrapper.config
-  copy:
-    src: "x11/Xwrapper.config"
-    dest: "/etc/X11/Xwrapper.config"
-  sudo: true
+
 
 - name: x-window-system | Install Font
   pacman:

@@ -7,11 +7,27 @@
     update_cache: yes
   sudo: true
 
+- name: open-vm-tools | Gen /etc/arch-release
+  shell: "cat /proc/version > /etc/arch-release"
+  sudo: true
+
 - name: open-vm-tools | Load open-vm module
   copy:
     src: "modules-load.d/vmware.conf"
     dest: "/etc/modules-load.d/vmware.conf"
   notify: "mkinitcpio"
+  sudo: true
+
+- name: open-vm-tools | Copy Xwrapper.config
+  copy:
+    src: "x11/Xwrapper.config"
+    dest: "/etc/X11/Xwrapper.config"
+  sudo: true
+
+- name: open-vm-tools | Copy open-vm-tools
+  copy:
+    src: "xinitrc.d/60-open-vm-tools.sh"
+    dest: "/etc/X11/xinit/xinitrc.d/60-open-vm-tools.sh"
   sudo: true
 
 - name: open-vm-tools | Start services vmtoolsd
