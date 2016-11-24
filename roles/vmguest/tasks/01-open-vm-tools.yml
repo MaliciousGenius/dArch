@@ -7,9 +7,9 @@
     update_cache: yes
   sudo: true
 
-- name: open-vm-tools | Gen /etc/arch-release
-  shell: "cat /proc/version > /etc/arch-release"
-  sudo: true
+#- name: open-vm-tools | Gen /etc/arch-release
+#  shell: "cat /proc/version > /etc/arch-release"
+#  sudo: true
 
 - name: open-vm-tools | Load open-vm module
   copy:
