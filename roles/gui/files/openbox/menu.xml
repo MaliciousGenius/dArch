@@ -32,10 +32,6 @@
       <startupnotify><enabled>yes</enabled></startupnotify>
     </action>
   </item>
-  <separator />
-  <item label="Reconfigure Openbox">
-    <action name="Reconfigure" />
-  </item>
   <item label="Openbox Menu Configuration Manager">
     <action name="Execute">
       <command>obmenu</command>
