@@ -1,7 +1,16 @@
 ---
 
-- include: 01-vbox.yml
-  when: ansible_os_family == "Archlinux" and ansible_virtualization_type == "virtualbox"
+- name: Install packages
+  pacman:
+    name: "{{ item }}"
+    state: "present"
+  with_items:
+    - open-vm-tools
+  sudo: true
 
-- include: 02-vmware.yml
-  when: ansible_os_family == "Archlinux" and ansible_virtualization_type == "VMware"
+- name: Load module
+  copy:
+    src: "modules-load.d/vmware.conf"
+    dest: "/etc/modules-load.d/vmware.conf"
+  notify: "mkinitcpio"
+  sudo: true

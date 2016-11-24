@@ -8,6 +8,8 @@
     - xf86-video-vesa
     - xf86-video-fbdev          # Пакет содержит драйвер для кадрового буфера Linux (еще известный как fbdev).
     - xf86-input-synaptics
+    - xorg-x11-drv-vmware
+    - xorg-x11-drv-vmmouse
   sudo: true
 
 - name: x-window-system | Install X system packages
@@ -25,8 +27,8 @@
 
 - name: x-window-system  | Load VirtualBox module
   copy:
-    src: "x11/xorg.conf"
-    dest: "/etc/X11/xorg.conf"
+    src: "x11/Xwrapper.config"
+    dest: "/etc/X11/Xwrapper.config"
   sudo: true
 
 - name: x-window-system | Install Font
