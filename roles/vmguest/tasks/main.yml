@@ -3,5 +3,5 @@
 - include: 01-vbox.yml
   when: ansible_os_family == "Archlinux" and ansible_virtualization_type == "virtualbox"
 
-- include: 01-vmware.yml
-#  when: ansible_os_family == "Archlinux" and ansible_virtualization_type == "VMware"
+- include: 02-vmware.yml
+  when: ansible_os_family == "Archlinux" and ansible_virtualization_type == "VMware"
