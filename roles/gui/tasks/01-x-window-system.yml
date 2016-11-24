@@ -18,6 +18,9 @@
     - xorg-server
     - xorg-server-utils
     - xorg-xinit
+    - xorg-twm
+    - xorg-xclock
+    - xterm
   sudo: true
 
 - name: x-window-system  | Load VirtualBox module
