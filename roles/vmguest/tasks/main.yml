@@ -4,4 +4,4 @@
   when: ansible_os_family == "Archlinux" and ansible_virtualization_type == "virtualbox"
 
 - include: 01-vmware.yml
-  when: ansible_os_family == "Archlinux" and ansible_virtualization_type == "VMware"
+#  when: ansible_os_family == "Archlinux" and ansible_virtualization_type == "VMware"
