@@ -1,6 +1,6 @@
 ---
 
-- name: Slim | Install packages
+- name: SLiM | Install packages
   pacman:
     name: "{{ item }}"
     state: "present"
@@ -10,13 +10,13 @@
     - archlinux-themes-slim
   sudo: true
 
-- name: Slim | Copy config
+- name: SLiM | Copy config
   copy:
     src: "slim.conf"
     dest: "/etc/slim.conf"
   sudo: true
 
-- name: Slim | Enable services sddm
+- name: SLiM | Enable services sddm
   service:
     name: "slim.service"
 #    state: "started"
