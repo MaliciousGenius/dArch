@@ -338,6 +338,12 @@
       <startupnotify><enabled>yes</enabled></startupnotify>
     </action>
   </item>
+  <item label="Openbox Menu Configuration Manager">
+    <action name="Execute">
+      <command>obmenu</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
   <item label="Gnome Control Center">
     <action name="Execute">
       <command>gnome-control-center</command>
