@@ -16,8 +16,9 @@
 #    dest: "/etc/slim.conf"
 #  sudo: true
 
-- name: Slim | Enable services
+- name: Slim | Enable services sddm
   service:
     name: "slim.service"
+#    state: "started"
     enabled: yes
   sudo: true
