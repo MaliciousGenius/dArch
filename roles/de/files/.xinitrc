@@ -1,6 +1,7 @@
 # .xinitrc
 #
 #! /bin/bash
+
 exec openbox-session
 
 # ~/.config/openbox/autostart

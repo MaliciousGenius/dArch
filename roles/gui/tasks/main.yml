@@ -1,9 +1,10 @@
 ---
 
 - include: 01-x-window-system.yml
-- include: 02-window-manager.yml
-- include: 03-gui-tools.yml
-- include: 04-gui-utilits.yml
+- include: 02-openbox.yml
+- include: 03-slim.yml
+- include: 04-gui-tools.yml
+- include: 05-gui-utilits.yml
 
 
 

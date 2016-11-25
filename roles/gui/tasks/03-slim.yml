@@ -1,6 +1,6 @@
 ---
 
-- name: Install X utilit packages
+- name: Slim | Install packages
   pacman:
     name: "{{ item }}"
     state: "present"
@@ -8,18 +8,17 @@
     - slim
     - slim-themes
     - archlinux-themes-slim
-    - compton
-    - qterminal
-    - gedit
-    - pcmanfm
-    - tint2
-    - xfce4-settings
-    - archlinux-wallpaper
+  sudo: true
+
+- name: Slim | Copy config
+  copy:
+    src: "slim.conf"
+    dest: "/etc/slim.conf"
   sudo: true
 
 - name: Enable services sddm
   service:
-    name: "sddm"
+    name: "slim.service"
     state: "started"
     enabled: yes
   sudo: true
