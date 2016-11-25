@@ -10,11 +10,11 @@
     - archlinux-themes-slim
   sudo: true
 
-- name: Slim | Copy config
-  copy:
-    src: "slim.conf"
-    dest: "/etc/slim.conf"
-  sudo: true
+#- name: Slim | Copy config
+#  copy:
+#    src: "slim.conf"
+#    dest: "/etc/slim.conf"
+#  sudo: true
 
 - name: Slim | Enable services
   service:
