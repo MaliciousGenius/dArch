@@ -5,14 +5,16 @@
     name: "{{ item }}"
     state: "present"
   with_items:
-    - sddm
+    - slim
+    - slim-themes
+    - archlinux-themes-slim
     - compton
     - qterminal
     - gedit
     - pcmanfm
-    - gamin       #pcmanfm
     - tint2
     - xfce4-settings
+    - archlinux-wallpaper
   sudo: true
 
 - name: Enable services sddm

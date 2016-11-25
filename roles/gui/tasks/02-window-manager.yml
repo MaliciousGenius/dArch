@@ -6,6 +6,7 @@
     state: "present"
   with_items:
     - openbox
+    - openbox-themes
     - obconf
     - obmenu
   sudo: true
