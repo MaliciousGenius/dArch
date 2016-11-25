@@ -1,8 +1,5 @@
 ---
 
 - name: Create marker
-  file:
-    path: "/etc/motherchip"
-    state: "directory"
-    mode: "0755"
+  shell: "echo 'v0.1' > /etc/motherchip"
   sudo: true
