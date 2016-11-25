@@ -12,4 +12,6 @@
   copy:
     src: "compton/compton.conf"
     dest: "/home/admin/.config/compton.conf"
+    owner: admin
+    group: users
   sudo: true
