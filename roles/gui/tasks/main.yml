@@ -2,27 +2,8 @@
 
 - include: 01-x-window-system.yml
 - include: 02-window-manager.yml
+- include: 03-gui-tools.yml
+- include: 04-gui-utilits.yml
 
-- name: Install X utilit packages
-  pacman:
-    name: "{{ item }}"
-    state: "present"
-  with_items:
-  ##########
-    - compton
-    - tint2
-    - sddm
-  ##########
-    # Terminal emulator
-    - qterminal
-    # Browser
-    - firefox
-    - firefox-i18n-ru
-  sudo: true
 
-- name: Enable services sddm
-  service:
-    name: "sddm"
-    state: "started"
-    enabled: yes
-  sudo: true
+
