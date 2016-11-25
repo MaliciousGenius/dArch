@@ -1,8 +1,8 @@
 ---
 
 - include: 01-x-window-system.yml
-- include: 02-xfce4.yml
-- include: 03-slim.yml
+- include: 02-sddm.yml
+- include: 03-xfce4.yml
 - include: 04-compton.yml
 - include: 05-gui-tools.yml
 - include: 06-gui-utilits.yml

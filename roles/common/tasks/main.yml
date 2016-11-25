@@ -1,5 +1,5 @@
 ---
 
 - name: Create marker
-  shell: "echo 'v0.1' > /etc/motherchip"
+  shell: echo "v0.1" > /etc/motherchip
   sudo: true
