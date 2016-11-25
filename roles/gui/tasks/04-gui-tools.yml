@@ -13,10 +13,3 @@
     - xfce4-settings
     - archlinux-wallpaper
   sudo: true
-
-- name: Enable services sddm
-  service:
-    name: "slim.service"
-    state: "started"
-    enabled: yes
-  sudo: true
