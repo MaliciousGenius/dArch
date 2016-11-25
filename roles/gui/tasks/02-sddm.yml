@@ -11,6 +11,5 @@
 - name: sddm | Enable services sddm
   service:
     name: "sddm.service"
-    state: "started"
     enabled: yes
   sudo: true
