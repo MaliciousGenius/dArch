@@ -1,6 +1,6 @@
 ---
 
-- name: window-manager | Install window manager
+- name: xfce4 | Install xfce4
   pacman:
     name: "{{ item }}"
     state: "present"

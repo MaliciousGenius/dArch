@@ -19,6 +19,6 @@
 - name: SLiM | Enable services sddm
   service:
     name: "slim.service"
-#    state: "started"
+    state: "started"
     enabled: yes
   sudo: true
