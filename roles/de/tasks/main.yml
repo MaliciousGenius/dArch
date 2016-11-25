@@ -1,16 +1,18 @@
 ---
 
-- name: admin | Copy .xinitrc
+- name: desktop enviroment | Copy .xinitrc
   copy:
     src: ".xinitrc"
     dest: "~/.xinitrc"
+  sudo: true
 
-- name: window-manager | Create config directory
+- name: desktop enviroment | Create config directory
   file:
     path: "~/.config/openbox"
     state: "directory"
+  sudo: true
 
-- name: window-manager | Copy config files openbox
+- name: desktop enviroment | Copy config files openbox
   copy:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
@@ -18,6 +20,4 @@
     - { src: "openbox/menu.xml", dest: "~/.config/openbox/menu.xml" }
     - { src: "openbox/autostart", dest: "~/.config/openbox/autostart" }
     - { src: "openbox/environment", dest: "~/.config/openbox/environment" }
-
-- name: reboot
-  shell: "reboot"
+  sudo: true

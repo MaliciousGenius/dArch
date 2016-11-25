@@ -18,5 +18,6 @@
     - ansible
     - linux-headers
     - cmake
+    - python
     - python2
   sudo: true

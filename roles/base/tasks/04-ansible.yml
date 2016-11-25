@@ -1,5 +1,11 @@
 ---
 
+- name: ansible | Copy conf
+  copy:
+    src: "ansible/ansible.cfg"
+    dest: "/etc/ansible/ansible.cfg"
+  sudo: true
+
 - name: ansible | Create link to init.d
   file:
     src: "/usr/lib/systemd/scripts/"
