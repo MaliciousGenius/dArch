@@ -16,7 +16,7 @@
     dest: "/etc/slim.conf"
   sudo: true
 
-- name: Enable services started
+- name: Slim | Enable services
   service:
     name: "slim.service"
     enabled: yes
