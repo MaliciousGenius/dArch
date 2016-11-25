@@ -35,3 +35,11 @@
     - ttf-inconsolata
   sudo: true
 
+- name: x-window-system | Load VirtualBox module
+  copy:
+    src: ".xinitrc"
+    dest: "/home/admin/.xinitrc"
+    owner: admin
+    group: users
+    mode: 0755
+  sudo: true
