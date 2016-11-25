@@ -3,8 +3,9 @@
 - include: 01-x-window-system.yml
 - include: 02-openbox.yml
 - include: 03-slim.yml
-- include: 04-gui-tools.yml
-- include: 05-gui-utilits.yml
+- include: 03-compton.yml
+- include: 05-gui-tools.yml
+- include: 06-gui-utilits.yml
 
 
 

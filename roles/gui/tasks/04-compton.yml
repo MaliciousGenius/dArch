@@ -1,0 +1,15 @@
+---
+
+- name: Compton | Install packages
+  pacman:
+    name: "{{ item }}"
+    state: "present"
+  with_items:
+    - compton
+  sudo: true
+
+- name: Compton | Copy config
+  copy:
+    src: "compton/compton.conf"
+    dest: "/home/admin/.config/compton.conf"
+  sudo: true
