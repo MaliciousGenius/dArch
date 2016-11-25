@@ -7,7 +7,7 @@
 
 - name: window-manager | Create config directory
   file:
-    path: "/home/admin/.config/openbox"
+    path: "~/.config/openbox"
     state: "directory"
 
 - name: window-manager | Copy config files openbox
@@ -15,6 +15,9 @@
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
   with_items:
-    - { src: "openbox/menu.xml", dest: "/home/admin/.config/openbox/menu.xml" }
-    - { src: "openbox/autostart", dest: "/home/admin/.config/openbox/autostart" }
-    - { src: "openbox/environment", dest: "/home/admin/.config/openbox/environment" }
+    - { src: "openbox/menu.xml", dest: "~/.config/openbox/menu.xml" }
+    - { src: "openbox/autostart", dest: "~/.config/openbox/autostart" }
+    - { src: "openbox/environment", dest: "~/.config/openbox/environment" }
+
+- name: reboot
+  shell: "reboot"
