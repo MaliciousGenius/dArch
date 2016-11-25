@@ -1,7 +1,7 @@
 ---
 
 - include: 01-x-window-system.yml
-- include: 02-openbox.yml
+- include: 02-xfce4.yml
 - include: 03-slim.yml
 - include: 03-compton.yml
 - include: 05-gui-tools.yml
