@@ -9,7 +9,10 @@
     - compton
     - qterminal
     - gedit
+    - pcmanfm
+    - gamin       #pcmanfm
     - tint2
+    - xfce4-settings
   sudo: true
 
 - name: Enable services sddm

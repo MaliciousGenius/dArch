@@ -17,7 +17,7 @@
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
   with_items:
-    - { src: "openbox/menu.xml", dest: "~/.config/openbox/menu.xml" }
-    - { src: "openbox/autostart", dest: "~/.config/openbox/autostart" }
-    - { src: "openbox/environment", dest: "~/.config/openbox/environment" }
+    - { src: "openbox/menu.xml", dest: "/etc/xdg/openbox/menu.xml" }
+    - { src: "openbox/autostart", dest: "/etc/xdg/openbox/autostart" }
+    - { src: "openbox/environment", dest: "/etc/xdg/openbox/environment" }
   sudo: true
