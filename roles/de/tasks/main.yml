@@ -3,21 +3,27 @@
 - name: desktop enviroment | Copy .xinitrc
   copy:
     src: ".xinitrc"
-    dest: "~/.xinitrc"
+    dest: "/home/admin/.xinitrc"
+    owner: admin
+    group: users
   sudo: true
 
 - name: desktop enviroment | Create config directory
   file:
-    path: "~/.config/openbox"
+    path: "/home/admin/.config/openbox"
     state: "directory"
+    owner: admin
+    group: users
   sudo: true
 
 - name: desktop enviroment | Copy config files openbox
   copy:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
+    owner: admin
+    group: users
   with_items:
-    - { src: "openbox/menu.xml", dest: "/etc/xdg/openbox/menu.xml" }
-    - { src: "openbox/autostart", dest: "/etc/xdg/openbox/autostart" }
-    - { src: "openbox/environment", dest: "/etc/xdg/openbox/environment" }
+    - { src: "openbox/menu.xml", dest: "/home/admin/.config/openbox/menu.xml" }
+    - { src: "openbox/autostart", dest: "/home/admin/.config/openbox/autostart" }
+    - { src: "openbox/environment", dest: "/home/admin/.config/openbox/environment" }
   sudo: true
