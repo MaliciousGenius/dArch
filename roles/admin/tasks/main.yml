@@ -1,0 +1,20 @@
+---
+
+- name: admin | Copy .xinitrc
+  copy:
+    src: ".xinitrc"
+    dest: "~/.xinitrc"
+
+- name: window-manager | Create config directory
+  file:
+    path: "/home/admin/.config/openbox"
+    state: "directory"
+
+- name: window-manager | Copy config files openbox
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items:
+    - { src: "openbox/menu.xml", dest: "/home/admin/.config/openbox/menu.xml" }
+    - { src: "openbox/autostart", dest: "/home/admin/.config/openbox/autostart" }
+    - { src: "openbox/environment", dest: "/home/admin/.config/openbox/environment" }
