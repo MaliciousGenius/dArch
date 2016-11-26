@@ -7,5 +7,6 @@
   with_items:
     - xfce4
     - xfce4-goodies
+    - xfce4-whiskermenu-plugin
     - archlinux-wallpaper
   sudo: true

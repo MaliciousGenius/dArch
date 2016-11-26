@@ -21,9 +21,9 @@
     mode: 0755
   sudo: true
 
-- name: Compton | pgrep
-  shell: "pgrep -l compton"
-  sudo: true
+#- name: Compton | pgrep
+#  shell: "pgrep -l compton"
+#  sudo: true
 
 - name: Compton | Copy config
   copy:

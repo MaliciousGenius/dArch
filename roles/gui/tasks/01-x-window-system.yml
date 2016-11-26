@@ -22,6 +22,7 @@
     - xorg-xinit
     - xorg-twm
     - xorg-xclock
+    - xorg-xkill
     - xterm
   sudo: true
 
