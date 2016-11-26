@@ -43,6 +43,14 @@
     group: users
   sudo: true
 
+- name: x-window-system | Create autostart directory for user "admin"
+  file:
+    path: "/home/admin/.config/autostart"
+    state: "directory"
+    owner: admin
+    group: users
+  sudo: true
+
 - name: x-window-system | Copy .xinitrc for user "admin"
   copy:
     src: ".xinitrc"

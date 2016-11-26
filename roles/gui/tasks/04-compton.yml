@@ -8,6 +8,23 @@
     - compton
   sudo: true
 
+- name:  q
+  shell: "xfconf-query -c xfwm4 -p /general/use_compositing -s false"
+  sudo: true
+
+- name: vbox | Load VirtualBox module
+  copy:
+    src: "compton/compton.desktop"
+    dest: "/home/admin/.config/autostart/compton.desktop"
+    owner: admin
+    group: users
+    mode: 0755
+  sudo: true
+
+- name:  q
+  shell: "pgrep -l compton"
+  sudo: true
+
 - name: Compton | Copy config
   copy:
     src: "compton/compton.conf"

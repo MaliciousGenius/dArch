@@ -7,20 +7,21 @@
     update_cache: yes
   sudo: true
 
-- name: Install docker-compose
-  pip:
-    name: docker-compose
+- name: Start Web UI
+  shell: "docker run -d -p 9000:9000 --privileged -v /var/run/docker.sock:/var/run/docker.sock uifd/ui-for-docker &"
   sudo: true
 
-- name: Add /usr/share/bash-completion/completions/docker-compose
-  shell: "curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose > /usr/share/bash-completion/completions/docker-compose"
-  sudo: true
+#- name: Install docker-compose
+#  pip:
+#    name: docker-compose
+#  sudo: true
+
+#- name: Add /usr/share/bash-completion/completions/docker-compose
+#  shell: "curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose > /usr/share/bash-completion/completions/docker-compose"
+#  sudo: true
 
 - name: Adding existing user "system" to group docker
-  user:
-    name: "system"
-    groups: "docker"
-    append: yes
+  shell: "gpasswd -a system docker"
   sudo: true
 
 - name: Start services docker
