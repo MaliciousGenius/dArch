@@ -10,3 +10,22 @@
     - xfce4-whiskermenu-plugin
     - archlinux-wallpaper
   sudo: true
+
+- name: xfce4 | Create conf directory for user "admin"
+  file:
+    path: "/home/admin/.config/xfce4/terminal"
+    state: "directory"
+    owner: admin
+    group: users
+  sudo: true
+
+- name: xfce4 | Copy
+  copy:
+    src: "{{ item.src }}"
+    dest: {{ item.dest }}"
+    owner: admin
+    group: users
+    mode: 0755
+  with_items:
+    - { src: "xfce4/terminal/accels.scm", dest: "/home/admin/.config/xfce4/terminal/accels.scm" }
+    - { src: "xfce4/terminal/terminalrc", dest: "/home/admin/.config/xfce4/terminal/terminalrc" }
