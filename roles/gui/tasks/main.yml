@@ -4,8 +4,7 @@
 - include: 02-sddm.yml
 - include: 03-xfce4.yml
 - include: 04-compton.yml
-- include: 05-gui-tools.yml
-- include: 06-gui-utilits.yml
+- include: 05-gui-utilits.yml
 
 
 

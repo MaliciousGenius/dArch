@@ -5,6 +5,7 @@
     name: "docker"
     state: "present"
     update_cache: yes
+  sudo: true
 
 - name: Start services docker
   service:

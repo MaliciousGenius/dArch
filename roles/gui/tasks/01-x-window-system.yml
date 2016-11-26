@@ -35,7 +35,7 @@
     - ttf-inconsolata
   sudo: true
 
-- name: x-window-system | Create config directory
+- name: x-window-system | Create config directory for user "admin"
   file:
     path: "/home/admin/.config"
     state: "directory"
@@ -43,7 +43,7 @@
     group: users
   sudo: true
 
-- name: x-window-system | Copy .xinitrc
+- name: x-window-system | Copy .xinitrc for user "admin"
   copy:
     src: ".xinitrc"
     dest: "/home/admin/.xinitrc"
