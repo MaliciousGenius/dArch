@@ -35,7 +35,15 @@
     - ttf-inconsolata
   sudo: true
 
-- name: x-window-system | Load VirtualBox module
+- name: x-window-system | Create config directory
+  file:
+    path: "/home/admin/.config"
+    state: "directory"
+    owner: admin
+    group: users
+  sudo: true
+
+- name: x-window-system | Copy .xinitrc
   copy:
     src: ".xinitrc"
     dest: "/home/admin/.xinitrc"
