@@ -22,9 +22,8 @@
       sudo: true
 
   tasks:
-    - name: Set hostname
-      hostname:
-        name: "mothership"
+    - name: Create marker
+      shell: "reboot"
       sudo: true
 
   roles:
