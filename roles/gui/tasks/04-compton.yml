@@ -8,7 +8,7 @@
     - compton
   sudo: true
 
-- name:  q
+- name: Compton | xfconf-query
   shell: "xfconf-query -c xfwm4 -p /general/use_compositing -s false"
   sudo: true
 
@@ -21,7 +21,7 @@
     mode: 0755
   sudo: true
 
-- name:  q
+- name: Compton | pgrep
   shell: "pgrep -l compton"
   sudo: true
 
