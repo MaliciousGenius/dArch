@@ -29,3 +29,4 @@
   with_items:
     - { src: "xfce4/terminal/accels.scm", dest: "/home/admin/.config/xfce4/terminal/accels.scm" }
     - { src: "xfce4/terminal/terminalrc", dest: "/home/admin/.config/xfce4/terminal/terminalrc" }
+  sudo: true
