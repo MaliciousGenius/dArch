@@ -16,11 +16,12 @@
   shell: "curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose > /usr/share/bash-completion/completions/docker-compose"
   sudo: true
 
-- name: Adding existing user "admin" to group docker
+- name: Adding existing user "system" to group docker
   user:
-    name: admin
-    groups: docker
+    name: "system"
+    groups: "docker"
     append: yes
+  sudo: true
 
 - name: Start services docker
   service:
