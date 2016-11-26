@@ -8,9 +8,9 @@
     - compton
   sudo: true
 
-- name: Compton | xfconf-query
-  shell: "xfconf-query -c xfwm4 -p /general/use_compositing -s false"
-  sudo: true
+#- name: Compton | xfconf-query
+#  shell: "xfconf-query -c xfwm4 -p /general/use_compositing -s false"
+#  sudo: true
 
 - name: vbox | Load VirtualBox module
   copy:
