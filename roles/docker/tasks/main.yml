@@ -7,6 +7,14 @@
     update_cache: yes
   sudo: true
 
+- name: Install docker-compose
+  pip:
+    name: docker-compose
+
+- name: Add /usr/share/bash-completion/completions/docker-compose
+  shell: "curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose > /usr/share/bash-completion/completions/docker-compose"
+  sudo: true
+
 - name: Adding existing user "admin" to group docker
   user:
     name: admin

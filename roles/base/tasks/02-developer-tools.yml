@@ -20,4 +20,6 @@
     - cmake
     - python
     - python2
+    - python-pip
+    - python2-pip
   sudo: true
