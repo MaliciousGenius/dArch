@@ -10,6 +10,7 @@
 - name: Install docker-compose
   pip:
     name: docker-compose
+  sudo: true
 
 - name: Add /usr/share/bash-completion/completions/docker-compose
   shell: "curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose > /usr/share/bash-completion/completions/docker-compose"
