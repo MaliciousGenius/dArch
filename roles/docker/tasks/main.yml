@@ -7,6 +7,12 @@
     update_cache: yes
   sudo: true
 
+- name: Adding existing user "admin" to group docker
+  user:
+    name: admin
+    groups: docker
+    append: yes
+
 - name: Start services docker
   service:
     name: "docker"
