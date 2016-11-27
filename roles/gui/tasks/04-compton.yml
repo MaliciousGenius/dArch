@@ -8,7 +8,7 @@
     - compton
   sudo: true
 
-- name: vbox | Load VirtualBox module
+- name: Compton | Load compton.desktop
   copy:
     src: "compton/compton.desktop"
     dest: "/home/admin/.config/autostart/compton.desktop"
