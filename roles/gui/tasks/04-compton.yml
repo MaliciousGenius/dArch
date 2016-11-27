@@ -17,6 +17,15 @@
     mode: 0755
   sudo: true
 
+- name: Compton | Load workspace.desktop
+  copy:
+    src: "workspace.desktop"
+    dest: "/home/admin/.config/autostart/workspace.desktop"
+    owner: admin
+    group: users
+    mode: 0755
+  sudo: true
+
 - name: Compton | Copy config
   copy:
     src: "compton/compton.conf"
