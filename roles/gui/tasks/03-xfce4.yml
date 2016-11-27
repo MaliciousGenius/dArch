@@ -33,5 +33,4 @@
 
 - name: Adding existing user "system" to group docker
   shell: "gpasswd -a system docker"
-  user: admin
   sudo: true
