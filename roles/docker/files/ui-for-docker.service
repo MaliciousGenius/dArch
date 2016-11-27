@@ -1,0 +1,12 @@
+[Unit]
+Description=ui-for-docker
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker start -a ui-for-docker
+ExecStop=/usr/bin/docker stop -t 2 ui-for-docker
+
+[Install]
+WantedBy=multi-user.target
