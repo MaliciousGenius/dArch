@@ -19,6 +19,10 @@
   sudo: true
 
 - name: Start docker container
+  shell: "docker run -d -p 9000:9000 --privileged -v /var/run/docker.sock:/var/run/docker.sock ui-for-docker"
+  sudo: true
+
+- name: Start docker container
   copy:
     src: "ui-for-docker.service"
     dest: "/etc/systemd/system/ui-for-docker.service"
