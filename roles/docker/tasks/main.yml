@@ -7,15 +7,15 @@
     update_cache: yes
   sudo: true
 
-- name: Adding existing user "system" to group docker
-  shell: "gpasswd -a system docker"
-  sudo: true
-
 - name: Start services docker
   service:
     name: "docker"
     state: "started"
     enabled: yes
+  sudo: true
+
+- name: Adding existing user "system" to group docker
+  shell: "gpasswd -a system docker"
   sudo: true
 
 - name: Start docker container
