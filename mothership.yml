@@ -21,10 +21,10 @@
       shell: "grub-mkconfig -o /boot/grub/grub.cfg"
       sudo: true
 
-  tasks:
-    - name: Create marker
-      shell: "reboot"
-      sudo: true
+#  tasks:
+#    - name: Create marker
+#      shell: "reboot"
+#      sudo: true
 
   roles:
     - base
