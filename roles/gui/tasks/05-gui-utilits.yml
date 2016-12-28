@@ -1,6 +1,5 @@
 ---
 
-
 - name: Install X utilit packages
   pacman:
     name: "{{ item }}"

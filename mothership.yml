@@ -21,14 +21,13 @@
       shell: "grub-mkconfig -o /boot/grub/grub.cfg"
       sudo: true
 
-#  tasks:
-#    - name: Create marker
-#      shell: "reboot"
-#      sudo: true
+  tasks:
+    - name: Create marker
+      shell: echo "v0.2" > /etc/motherchip
+      sudo: true
 
   roles:
     - base
     - vmguest
-    - common
     - gui
     - docker

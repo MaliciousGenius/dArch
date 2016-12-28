@@ -1,5 +1,0 @@
----
-
-- name: Create marker
-  shell: echo "v0.2" > /etc/motherchip
-  sudo: true

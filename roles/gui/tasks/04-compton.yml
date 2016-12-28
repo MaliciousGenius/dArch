@@ -19,7 +19,7 @@
 
 - name: Compton | Load workspace.desktop
   copy:
-    src: "workspace.desktop"
+    src: "compton/workspace.desktop"
     dest: "/home/admin/.config/autostart/workspace.desktop"
     owner: admin
     group: users
