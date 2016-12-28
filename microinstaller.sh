@@ -6,15 +6,15 @@
 partitioning_hd() {
     parted -s /dev/sda \
         mklabel msdos \
-        mkpart primary ext2 1M 255M \
+        mkpart primary ext4 1M 255M \
         mkpart primary linux-swap 256M 512M \
-        mkpart primary ext2 513M 100% \
+        mkpart primary ext4 513M 100% \
         set 1 boot on
 }
 
 # Форматирую раделы
 format_partition() {
-    mkfs.ext2 -F -L boot /dev/sda1
+    mkfs.ext4 -F -L boot /dev/sda1
     mkfs.ext4 -F -L root /dev/sda3
     mkswap /dev/sda2
 }
@@ -27,7 +27,7 @@ mount_partition() {
     swapon /dev/sda2
 }
 
-# Устанавливаю набор базовах патетов
+# Устанавливаю набор базовых пакетов
 install_packages() {
     pacstrap /mnt base base-devel grub git ansible
 }
@@ -48,7 +48,7 @@ initial_settings() {
     arch-chroot /mnt /root/microinstaller-chroot.sh
 }
 
-# Удаляю подготовительный сктипт
+# Удаляю начальных настроек
 erase_preparatory_script() {
     rm /mnt/root/microinstaller-chroot.sh
 }
