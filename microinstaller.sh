@@ -48,7 +48,7 @@ initial_settings() {
     arch-chroot /mnt /root/microinstaller-chroot.sh
 }
 
-# Удаляю начальных настроек
+# Удаляю сктипт начальных настроек
 erase_preparatory_script() {
     rm /mnt/root/microinstaller-chroot.sh
 }
