@@ -1,5 +1,11 @@
 ---
 
+- name: Update Arch
+  pacman:
+    update_cache: yes
+    upgrade: yes
+  sudo: true
+
 - include: 01-postinstall-verify.yml
 - include: 02-developer-tools.yml
 - include: 03-utility.yml
