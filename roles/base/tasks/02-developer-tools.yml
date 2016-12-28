@@ -1,21 +1,10 @@
 ---
 
-- name: building-system | Update Arch
-  pacman:
-    update_cache: yes
-    upgrade: yes
-  sudo: true
-
 - name: building-system | Install base (all) packages for bulding
   pacman:
     name: "{{ item }}"
     state: "present"
   with_items:
-    - base
-    - base-devel
-    - grub
-    - git
-    - ansible
     - linux-headers
     - cmake
     - python
