@@ -1,6 +1,6 @@
 ---
 
-- name: building-system | Install base (all) packages for bulding
+- name: developer tools | Install packages for dev
   pacman:
     name: "{{ item }}"
     state: "present"
