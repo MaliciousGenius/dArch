@@ -7,4 +7,5 @@
     update_cache: yes
   with_items:
     - mc
+    - wget
   sudo: true
