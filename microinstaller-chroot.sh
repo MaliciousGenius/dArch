@@ -75,7 +75,7 @@ configure_git(){
     git config --global user.name "maliciousgenius"
 }
 
-# Загрузка репозитория microarch-custom
+# Загрузка репозитория dArch
 get_repo_microarch(){
     cd /opt
     git clone https://github.com/MaliciousGenius/dArch.git
